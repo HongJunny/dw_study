@@ -1,0 +1,5 @@
+\\192.168.0.39 -> 현상원
+-> 데이터베이스
+
+insert into emp(empno, ename, job, hiredate, sal, comm)
+values (8002, '손흥민', 'DEVELOPER', now(), 300, 100)

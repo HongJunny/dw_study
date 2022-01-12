@@ -1,0 +1,173 @@
+
+* 문법
+
+
+SELECT
+ <컬럼 이름>,
+ <컬럼 이름>,
+        .
+        .
+        .
+ <컬럼 이름>
+FROM
+ <테이블 이름>
+WHERE    ☜  필터링 기능
+ <조건>
+
+
+------------------------------
+
+
+<enp 테이블 컬럼 뜻>
+
+MGR : 사수 번호
+HIREDATE : 고용 날짜
+SAL : 월급
+COMM : 보너스
+DEPTNO : 부서번호
+
+
+------------------------------
+
+
+관계 연산자
+
+=>, >, >=, =, <=, <, =<
+!=  (다르다)
+
+
+------------------------------
+
+
+논리 연산자
+
+and ( 두개가 '참'일때 ) ,  or ( 두개중에 한개라도 '참'일때 )
+
+
+------------------------------
+
+
+정렬 - 맨 뒤에 적힘
+
+desc : 내림차순
+asc : 오름차순
+
+ex )
+select
+	ename,
+	sal
+from emp
+order by sal asc
+
+
+------------------------------
+
+
+해석할때 보는 순서
+
+1. from
+2. where
+3. select - 선택한 컬럼
+4. order by - 많이 쓰면 시스템 과부하가 되기 때문에 잘 안씀
+
+
+------------------------------
+
+
+NULL - 해당 데이터에 값이 들어가지 않은 상태
+
+ex) null인 사람 찾기 - 되도록이면 null 데이터를 조회하지 않아야 한다.
+select
+	ename,
+	sal,
+	comm
+from emp
+where comm is null
+
+
+ex) null이 아닌 사람 찾기
+select
+	ename,
+	sal,
+	comm
+from emp
+where comm is not null
+
+------------------------------
+
+
+insert into = 어느 테이블에 데이터를 insert 할건지.
+
+ex)
+insert into emp
+(empno, ename, job, mgr, hiredate, sal, comm, deptno)
+values
+(8000, '홍준호', 'operations', 7369, '2022-01-06', 5000, 1000, 30)
+
+
+------------------------------
+
+
+update = 정보를 업데이트 할 때 ( where는 꼭 붙여야 됨, 안붙이고 쓰면 모든 정보가 다 바뀜 )
+
+update emp
+set ename = '정우성'
+where empno = 8001;
+
+
+------------------------------
+
+
+통계
+
+select
+	sum(comm) as '보너스 총 합'
+from emp
+
+
+------------------------------
+
+
+함수
+
+avg = 평균
+count
+sum
+max = 최대
+min = 최소
+
+
+------------------------------
+
+
+문자열 연산자
+
+like
+
+
+------------------------------
+
+그룹 - 모든 부서의 월급 총 합
+
+ex)
+select
+	job
+	sum(sal) as '월급 총 합'
+from emp
+group by job
+
+------------------------------
+
+having - 부서중에서 월급 총 합이 6천달러 초과한 곳
+
+ex)
+select
+	job
+	sum(sal) as '월급 총 합'
+from emp
+group by job
+having sum(sal) > 6000
+
+
+------------------------------
+

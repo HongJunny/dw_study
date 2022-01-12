@@ -1,0 +1,51 @@
+조인을 이용해서 데이터를 가져와야 함.
+
+1. 조인
+   1) 교집합 데이터를 찾아내야 함.
+   2) emp 테이블과 dept 테이블을 비교했을때 deptno(부서번호)
+       select
+       	e.ename
+       	d.dname
+       from emp
+       inner join dept as d
+       on e.deptno = d.deptno
+
+2. 아우터 조인
+   1) left 
+   2) right 
+   3) full 
+
+3. 셀프 조인
+   1) 특별한 문법이 없다
+   2) 같은 테이블을 조인할 때
+
+
+----------------------------------
+
+
+select 
+	*
+from dept as d left join emp as e 
+on d.deptno = e.deptno
+
+
+
+----------------------------------
+
+
+사원 이름, 사수 이름 조회
+부서 번호가 20번인 사원만
+  hint - 셀프 조인 사용
+
+select 
+	sawon.ename,
+	boss.ename
+from emp as sawon
+inner join emp as boss 
+on sawon.mgr = boss.empno 
+where sawon.deptno = 20
+
+
+----------------------------------
+
+
