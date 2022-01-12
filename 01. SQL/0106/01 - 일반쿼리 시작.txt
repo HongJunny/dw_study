@@ -1,0 +1,25 @@
+1. 데이터를 저장하는 프로그램을 배우는 것 --> 데이터베이스
+
+
+2. SQL 이라는 문법을 통해서 데이터를 가져와야 함.
+
+
+
+
+
+※ 정보처리기사 준비 ( 필기 단골 문제 )
+*** DDL ( Date Definition Language )
+         공통점 : table을 관리하는 명령어
+             - CREATE
+             - DROP
+             - ALTER
+***** DML ( Date Manipulation Language )
+         공통점 : table 안에 있는 데이터를 관리하는 명령어
+             - SELECT
+             - DELETE
+             - INSERT
+             - UPDATE
+DCL ( Date Control Language )
+         공통점 : 데이터베이스 관리
+             - GRANT
+             - REVOKE
