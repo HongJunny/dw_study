@@ -7,7 +7,9 @@
 			System.out.println("짝수는 "+i);
 		}
 		else
+		{
 			System.out.println("홀수는 "+i);
+		}
 	}
 
 

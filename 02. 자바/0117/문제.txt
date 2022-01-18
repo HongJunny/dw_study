@@ -1,0 +1,64 @@
+1. 메소드를 활용해서 1부터 10까지 짝수 출력
+조건. 인자값 하고 리턴값이 없음.
+
+
+public static void 짝수판단(){
+	...코드작성...
+}
+
+
+
+------------------------------------------------------------------------
+
+2.메소드를 활용해서 최대값 구하기.
+조건. 인덱스 값이 50이 넘으면 최대값 비교를 하지 않습니다.
+조건. 배열길이가 5를 넘으면 return 0을 합니다. 
+
+
+public static int 최대값구하기(int[] array){
+	int max = 0;
+	...코드 작성...
+	return max;
+}
+
+
+
+------------------------------------------------------------------------
+
+3. 메소드를 활용해서 거스름돈 풀기.
+조건. 파라미터값에 만원을 입력하면 만원 몇장
+ 	오천원을 입력하면 오천원 몇장을 출력.
+	만원,오천원외 단어가 오면 0을 return 하시오
+
+
+public static int 최대값구하기(String money,int totalMoney){
+	int MAN = 10000;
+	int OCHEON = 5000;
+	if(money.equals("만원")) ... 코드 작성 ...
+	if(money.equals("오천원")) ... 코드 작성 ...
+}
+
+
+
+public static int 최대값구하기(String money, int totalMoney)
+{
+	int MAN = 10000;
+	int OCHEON = 5000;
+	int 최종거스름돈 = 0;
+		
+	if(money.equals("만원"))
+	{
+		최종거스름돈 = totalMoney / MAN;
+		return 최종거스름돈;
+	}
+	if(money.equals("오천원")) 
+	{
+		최종거스름돈 = totalMoney / OCHEON;
+		return 최종거스름돈;
+	}
+	return 0;
+}
+
+public static void main(String[] args) {
+	System.out.println(최대값구하기("만원",50000));
+	}

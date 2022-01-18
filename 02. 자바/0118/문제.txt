@@ -1,0 +1,125 @@
+햄버거 프로그램 작성
+1. 햄버거 클래스 생성
+	*** 아래 메소드 생성 ***
+  1-1. public void 빵굽다()
+	System.out.println("빵굽는중 ~ ")
+  1-2. public String 패티추가하다 (String 패티이름)
+  1-3. public int 주문수량(int 주문수량)
+
+2. 고객 클래스 생성
+	고객 클래스 메인메소드에서 
+        햄버거 클래스 호출하시오.
+
+3. 불고기,치즈 버거 생성하시오
+아래와 같은 결과값이 나와야함!
+
+빵굽는중 ~ 
+불고기 패티 추가 or 치즈 패티 추가
+5개 주문
+
+ 
+
+
+
+* 햄버거 클래스
+
+	public class 햄버거 {
+
+		public void 빵굽다()
+		{
+			System.out.println("빵굽는중 ~");
+		}
+	
+		public String 패티추가하다(String 패티이름)
+		{
+			return 패티이름;
+		}
+
+		public int 주문수량(int 주문수량)
+		{
+			return 주문수량;
+		}
+	
+	}
+
+
+
+
+
+* 고객 클래스
+
+	public class 고객 {
+
+		public static void main(String[] args) {
+
+			햄버거 버거 = new 햄버거();
+			버거.빵굽다();
+			String 패티이름 = 버거.패티추가하다("불고기");
+			System.out.println(패티이름+" 패티 추가");
+			int count = 버거.주문수량(10);
+			System.out.println(count+"개 주문");
+		
+		}
+
+	}
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+
+메소드 생성
+public static String getResult(String id){
+	//...코드 작성...
+	//조건 1. 아이디 길이가 10이하, 2이상
+	//조건 2. 아이디를 대문자에서 소문자로 변경.
+	//조건 3. 아이디에 '!'가 들어가면 안됨.
+	//조건 4. 아이디에 문자 공백이 들어가면 안됨.
+
+	return 문자열;
+}
+
+
+
+
+	public static void main(String[] args) {
+
+		String name = "HONGJUNHO";
+		String temp = "";
+		int len = name.length();
+		// 길이를 체크할때는 무조건 if로 사용
+		if(len<=10 && len>=2)   // 길이 체크를 할 때는 맨 앞에 if를 사용
+		{
+			temp = name.toLowerCase();
+			temp = temp.replace("!", "");
+			temp = temp.replace(" ", "");
+		}
+		System.out.println(temp.trim());
+		String a = temp.trim();
+		return;
+	}
+
+
+
+----------------------------------------------------------------------------------------------
+
+
+1. 조건이 들어간 최대 값 구하기
+public static int getResult(String word) {
+	//1.콤마로 배열생성
+	//2.느낌표 제거할 것
+  	//3.문자를 숫자로 변환 ex)int x = Integer.parseInt("100")
+	//4.1000 미만 숫자 중 가장 큰 수 구하기
+	//5.최종 결과값에서 곱하기 2를 해서 리턴 하기
+	return 0;
+}
+	
+public static void main(String[] args) {
+	String word = "101,1,10,1000,!100!,2000";
+	getResult(word)
+}
+
+
+
+

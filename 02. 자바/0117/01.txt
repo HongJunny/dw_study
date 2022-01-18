@@ -1,0 +1,379 @@
+※ 메소드
+
+
+
+* 메소드 ( 함수 or 기능 )
+  각 기능을 분리해서 개발해야 소프트웨어의 품질이 향상 됨.
+  ex) 로봇 팔, 다리
+      ( 응집도는 높고 결합도는 낮아야 좋은 소프트 웨어 )
+
+
+----------------------------------------------------------------
+
+
+* main : 자바에서 먼저 실행 되는 기능 ( 함수 )
+  'static'이 붙은 함수에는 'static' 함수만 올 수 있다.
+  접근 지정자 (객체지향 언어는 대부분 평균 4개의 접근지정자가 있음 ) : public, private, protected, 디폴트 접근지정자
+
+
+	public static void printName()
+	{
+		System.out.println("Hello World");
+	}
+
+	public static void main(String[] args)
+	{
+		printName();
+	}
+
+
+----------------------------------------------------------------
+
+
+* 함수를 만드는 이유 : 재사용 하기 위해
+
+
+----------------------------------------------------------------
+
+
+* 문법
+  접근지정자, 리턴타입, 메소드 이름, 인자값
+  public        int         getSum       ()
+
+
+  접근지정자
+     public : 다른 클래스에서 호출 가능
+     private : 내부 클래스에서만 호출 가능
+     protected
+     default
+
+  리턴타입 : 메소드가 실행 됐을때 최종 결과값을 반환
+  리턴 타입에는 데이터타입 8개와 클래스타입 1개(String)로 표현
+  리턴 타입이 없을때는 void로 표현
+
+  메소드 이름 : 동사로 사용
+     ex) 달리다, 호출하다, 먹다, 쉬다
+
+  인자값에는 최대 3개까지만 쓸 수 있음
+  인자값을 부르는 이름 : 인자값, 파라미터값
+  데이터타입 8개와 클래스타입 1개(String)로 표현
+  인자값이 없을 때는 '()'로 표현
+  콤마로 구별 함
+
+
+  public int getSum(int x)
+  {
+	int sum = 10;    //  리턴타입이 int형이면
+	return sum;      //  int형 데이터를 반환(return) 해야 함.
+  }
+
+
+----------------------------------------------------------------
+
+
+	public static int getNumber()
+	{
+		int x = 10;
+		if (x==10)
+		{
+			x=5;
+		}
+		return x;
+	}
+
+	public static void main(String[] args) {
+
+		int x = getNumber();
+		System.out.println("x 값은 "+x);
+	}
+
+
+----------------------------------------------------------------
+
+
+if 에서 '()' : 조건식 비교
+문법에서 '()' : 인자값
+
+
+----------------------------------------------------------------
+
+
+* 리턴 방법 - 자바는 메인 먼저 실행하기 때문에, 메인 함수 안에 써야 결과값을 볼 수 있음
+
+	public static String 어벤져스호출()
+	{
+		String 영웅이름 = "토르";
+		return 영웅이름;
+	}
+	public static void main(String[] args) {
+
+		String 호출한영웅이름 = 어벤져스호출();    // 어벤져스호출(); = 함수 호출
+		System.out.println(호출한영웅이름);
+	}
+
+
+
+	public static String 어벤져스호출()
+	{
+		return "토르";
+	}
+	public static void main(String[] args) {
+
+		String 호출한영웅이름 = 어벤져스호출();    // 어벤져스호출(); = 함수 호출
+		System.out.println(호출한영웅이름);
+	}
+
+----------------------------------------------------------------
+
+
+	public static int 성적계산(int 국어점수, int 수학점수)
+	{
+		int sum = 국어점수 + 수학점수;
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		int 수학점수 = 100;
+		int 국어점수 = 0;
+		int 총합 = 성적계산(국어점수, 수학점수);
+		System.out.println(총합);
+	}
+
+
+----------------------------------------------------------------
+
+
+
+* 1~10까지 총 합
+
+	public static int getSum(int max)
+	{
+		int sum=0;
+		for(int i=1; i<=max; i++)
+		{
+			sum+=i;
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		int result = getSum(10);
+		System.out.println(result);
+	}
+
+
+----------------------------------------------------------------
+
+
+* 돈을 입력 받고 만원이 몇장인지 리턴
+  단, 만원 이하로 인자값이 오면 0 리턴
+
+
+	public static int 거스름돈(int money)
+	{
+		final int man = 10000;
+		if(money<=man)
+			{
+			return 0;
+			}
+		int result = money/man;
+		return result;
+	}
+
+	public static void main(String[] args) {
+		int money = 50000;
+		int 만원몇장 = 거스름돈(money);
+		System.out.println(만원몇장);
+		
+	}
+
+
+----------------------------------------------------------------
+
+
+* x, y에 데이터를 넣고, 더한 값을 리턴하는 메소드 작성
+  단, x가 10 미만이면, x에 5를 대입
+
+
+	public static int getSum(int x, int y)
+	{
+		int sum = x+y;
+		if(x<10)
+		{
+			x=5;
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 7;
+		int y = 10;
+		int 값 = getSum(x,y);
+		System.out.println(값);
+	}
+
+
+----------------------------------------------------------------
+
+
+* x, y에 데이터를 넣고 x가 크면 x를 리턴, y가 크면 y를 리턴
+  단, x와 y의 데이터는 100을 넘으면 0을 리턴
+
+
+	public static int getSum(int x, int y)
+	{
+		if(x>y)
+		{
+			if(x>=100)
+				{
+					return 0;
+				}
+			return x;
+		}
+		else if(x<y)
+		{
+			if(y>=100)
+				{
+					return 0;
+				}
+			return 0;
+		}
+		return y;
+	}
+
+	public static void main(String[] args) {
+		
+		int x = 99;
+		int y = 90;
+		int 값 = getSum(x,y);
+		System.out.println(값);
+	}
+
+
+
+----------------------------------------------------------------
+
+
+* if로만 return을 하면, 마지막 줄에는 무조건 return을 한번 더 입력해야 함.
+     (컴퓨터는 그 조건이 틀렸을지 모른다고 가정을 하기 때문)
+  if를 쓴 후에 else로 끝내면, 둘 중 하나는 무조건 실행하기 때문에
+  마지막 줄에는 return을 입력 하지 않음
+
+
+----------------------------------------------------------------
+
+
+* 나쁜 코드
+
+	public static void 순대국밥(int 순대, int 내장, String 손님이름)
+	{
+		System.out.println("순대 : "+순대+", "+"내장 : "+내장+", "+"손님 : "+손님이름);
+	}
+
+	public static void main(String[] args) {
+		
+		순대국밥(10,10,"철수");
+		순대국밥(10,10,"영희");
+	}
+
+
+----------------------------------------------------------------
+
+
+* 좋은 코드 ( 짧고 한 눈에 알아볼 수 있어야 함 )
+
+
+	public static void 순대국밥(int 순대, int 내장, String 손님이름)
+	{
+		System.out.println("순대 : "+순대+", "+"내장 : "+내장+", "+"손님 : "+손님이름);
+	}
+
+	public static void main(String[] args) {
+		
+		int 순대개수 = 30;
+		int 내장개수 = 10;
+		Stringt 손님이름 = "철수"
+		순대국밥(순대국밥,내장개수,손님이름);
+		순대국밥(10,10,"영희");
+	}
+
+
+----------------------------------------------------------------
+
+
+*  1~100까지의 짝수 개수를 구하기
+StartNum이 endNum보다 크거나 같으면 리턴 0
+endNum이 100을 초과하면 리턴 0
+
+
+public int getCount(int startNum, int endNum)
+{
+	if(startNum >= endNum && endNum > 100) return 0;
+	int count = 0;
+	for(int i=startNum; i<=endNum; i++)
+	{
+		if(i%2 == 0) ++count;
+	}
+	return count;
+}
+	
+	public static void main(String[] args) {
+		
+		getCount(1,100);
+		
+	}
+
+
+----------------------------------------------------------------
+
+
+* 배열 받는 방법
+
+public static void main(String[] args) {
+	int array[] = {10,5,3,4}
+	배열받아보자(array);
+}
+public static int 배열받아보자(int[] array) {
+	int x = array[0];
+	return 0;
+}
+
+
+----------------------------------------------------------------
+
+
+'~부터 ~까지'는 무조건 for문 사용
+
+
+----------------------------------------------------------------
+
+
+
+
+
+----------------------------------------------------------------
+
+
+
+
+
+----------------------------------------------------------------
+
+
+
+
+
+----------------------------------------------------------------
+
+
+
+
+
+----------------------------------------------------------------
+
+
+
+
+
+----------------------------------------------------------------
