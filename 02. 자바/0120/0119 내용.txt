@@ -1,0 +1,51 @@
+    School 클래스
+
+	public class School {
+		
+	int grade;  // 필드변수 (최상위 전역 변수)
+	
+	
+	public void 등교하다()
+	{
+		System.out.println("학학학학 학교를 갔어!");
+	}
+	
+	public void 수업듣다()
+	{
+		System.out.println("학학학학 학교의 수업을 들었어!");
+	}
+	
+	public void 수업시간에자다()
+	{
+		System.out.println("학학학학 학교에서 잤어!");
+	}
+
+
+
+
+
+    클래스호출 클래스
+
+	public static School getSchool(School sch)
+	{
+		sch.grade = 20;
+		sch.등교하다();
+		sch.수업듣다();
+		return sch;
+	}
+	
+	public static void main(String[] args) {
+
+		School s = new School();
+		// new School();
+		// new를 이용해서 파일을 불러오면
+		// 해당 파일 (School)에 정의된
+		// 메소드와 필드변수를 사용할 수 있다.
+		
+		//s.grade = 10;  // 필드는 호출이 가능함.
+		s = getSchool(s);
+		System.out.println(s.grade);
+		
+		
+	}
+
