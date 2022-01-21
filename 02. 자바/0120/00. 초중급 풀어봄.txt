@@ -1,0 +1,51 @@
+1) 24
+
+2) 0
+
+3) 10
+
+4) 15, 10
+
+5) 
+	int count = 0;
+    	int array[] = {101, 110, 120, 130, 88, 30};
+    	
+    	for(int i=0; i<array.length; ++i)
+    	{
+    		if(array[i]>100)
+    		{
+    			++count;
+    		}
+    	}
+    	if(count<=3)
+    	{
+    		count = 5;
+    	}
+    	System.out.println(count);
+
+
+6)
+	int money = 157000;
+	final int OMAN = 50000;
+	final int MAN = 10000;
+	final int OCHEON = 5000;
+	int temp = 0;
+	int temp1 = 0;
+        
+	if(money>200000)
+	{
+		money = 0;
+		System.out.println(money);
+	}
+	else
+	{
+		temp = money/OMAN;
+		System.out.println("오만원 "+temp+"장");
+		temp = money%OMAN;
+		temp1 = temp/MAN;
+		System.out.println("만원 "+temp1+"장");
+		temp = temp%MAN;
+		temp = temp/OCHEON;
+		System.out.println("오천원 "+temp+"장");
+	}
+
