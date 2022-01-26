@@ -1,0 +1,107 @@
+*********************** UserVO ***********************
+
+package service;
+
+public class UserVO {
+
+	int id;
+	String name;
+	String email;
+	String phone;
+	boolean isLogin;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	public boolean isLogin() {
+		return isLogin;
+	}
+	public void setLogin(boolean isLogin) {
+		this.isLogin = isLogin;
+	}
+	
+		
+	
+
+}
+
+
+
+*********************** MainService ***********************
+
+package service;
+
+public class MainService {
+
+	public void setUser(UserVO vo)
+	{
+		
+	}
+	public UserVO getUser(int x)
+	{
+		if(x>=1 && x<=100)
+		{
+			UserVO u = new UserVO();
+			
+			u.setId(x);
+			u.getName();
+			u.getEmail();
+			u.getPhone();
+			u.isLogin();
+			
+			return u;
+		}
+		return null;
+	}
+
+}
+
+
+
+*********************** MainController ***********************
+
+package service;
+
+public class MainController {
+	
+
+	public static void main(String[] args) {
+
+		UserVO u = new UserVO();
+		MainService m = new MainService();
+		
+		u = m.getUser(30);
+		u.name = "현상원";
+		
+		System.out.println("id : "+u.id);
+		System.out.println("name : "+u.name);
+		
+	}
+
+}
