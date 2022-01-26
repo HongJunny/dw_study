@@ -9,7 +9,7 @@ public class MainController {
 		MainService m = new MainService();
 		
 		u = m.getUser(30);
-		u.name = "Çö»ó¿ø";
+		u.name = "í˜„ìƒì›";
 		
 		System.out.println("id : "+u.id);
 		System.out.println("name : "+u.name);
