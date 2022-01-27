@@ -1,0 +1,188 @@
+
+* 웹 시간에 자바를 더 배움
+
+1. 상속 ( 객체지향 특징 )
+2. 인터페이스 ( 객체지향 특징 )
+3. static ( 객체지향 특징 )
+4. 제네릭컬렉션즈 ( 자바 특징 )
+
+
+------------------------------------------------------------------
+
+
+* 플래그 ( Flag ) - 상태를 기록하고 "처리 흐름을 제어"하기 위한 boolean형 변수.
+  flag 값이 'true' or 'false'에 따라, 다른 코드를 실행시키는 것
+  플래그는 보기 어려워서 사용을 잘 하지 않음.
+     ex) 회원 가입 할 때, 양식을 맞게 쓰면 true, 아니면 false.
+         플래그 값이 true면 회원 저장, false면 뒤로가기 혹은 다시 입력하세요.
+
+
+  boolean 타입의 변수를 사용할 때는, 앞에 is+명사를 붙여야 함.
+     ex) boolean isResult, boolean isTrue
+
+
+  JAVA는 boolean형이 있음
+  boolean형이 없는 프로그래밍 언어가 있음
+     ex) C언어
+         true == 1
+         false == 0
+
+
+------------------------------------------------------------------
+
+
+* 변수 이름과 메소드 이름은 길면 길수록 좋다.
+  이름을 보고서 무엇을 의미하는지 알 수 있도록.
+
+
+  프로그래밍에서 '!'는 부정을 의미
+
+
+------------------------------------------------------------------
+
+
+	boolean isFlag = true;   // boolean형에는 'True' or 'False'만 가능.
+		
+	int num = 10;
+	int num_2 = 20;
+		
+	if(num==num_2)
+	{
+		isFlag = false;
+	}
+	if(isFlag)   // isFlag = true
+	{
+		System.out.println("false 입니다.");
+	}
+	if(!isFlag)   // !isFlag = false
+	{
+		System.out.println("true 입니다.");
+	}
+
+
+------------------------------------------------------------------
+
+
+	if(5==5)
+	{
+		isFlag = true;
+	}
+	if(isFlag)
+	{
+		int sum=0;
+		for(int i=0; i<5; ++i)
+		{
+			sum += i;
+		}
+		System.out.println("true일때만 실행하는 로직예제 "+sum);
+	}
+	if(!isFlag)
+	{
+		int sum=0;
+		for(int i=0; i<10; ++i)
+		{
+			sum += i;
+		}
+		System.out.println("false일때만 실행하는 로직예제 "+sum);
+	}
+
+
+------------------------------------------------------------------
+
+
+	public static void 로봇팔을동작하다()
+	{
+		System.out.println("팔을 동작하다.");
+	}
+	public static void 로봇다리를동작하다()
+	{
+		System.out.println("다리를 동작하다.");
+	}
+		
+
+	public static void main(String[] args) {
+
+		boolean isFlag = true;
+		
+		if(3>0)
+		{
+			isFlag = false;
+		}
+		if(!isFlag)
+		{
+			로봇다리를동작하다();
+		}
+		if(isFlag)
+		{
+			로봇팔을동작하다();
+		}
+		
+	}
+
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+
+
+* 'get, set 메소드' 복습
+
+필드변수 접근지정자를 private으로 설정함으로써, 다른 클래스 파일에서 불러 올 수가 없음. - 보안성
+
+1. private 필드변수를 생성자로 접근?
+   장점) 클래스 호출과 동시에 값 초기화.
+   단점) 유지보수가 힘듬 - 필드변수가 많아질수록 상황이 악화 됨.
+
+2. private 필드변수마다 메소드를 생성?
+   장점) 유지보수 편리.
+   단점) 필드변수가 추가 될 때마다 메소드를 만들어야 함.
+          이클립스에서 자동으로 생성을 해 줘서, 단점이 사라짐.
+
+
+------------------------------------------------------------------
+
+
+public class coffeeVO {   // get, set 복습
+
+	private String menu;
+	private int syrup;
+	
+	public void setMenu(String menu) {
+		this.menu = menu;
+	}
+	public String getMenu() {
+		return menu;
+	}
+	
+	public void setSyrup(int syrup) {
+		this.syrup = syrup;
+	}
+	public int getSyrup() {
+		return syrup;
+	}
+	
+}
+
+
+
+
+public class 카페 {
+
+	public static void main(String[] args) {
+
+		coffeeVO c = new coffeeVO();
+		// c.menu = "americano";    <<< private이라서 접근 불가능.
+		
+		c.setMenu("americano");   // set으로 저장
+		String coffee = c.getMenu();
+		System.out.println(coffee);
+		
+		c.setMenu("latte");
+		String coffee2 = c.getMenu();
+		System.out.println(coffee2);
+		
+		
+	}
+
+}
+
