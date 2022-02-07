@@ -1,0 +1,208 @@
+
+* 최소한으로 알아야 하는 HTML 태그
+
+링크 태그 ( 사이트 이동 ) : a 태그
+대, 중, 소 제목 태그 : h1 ~ h6 태그
+입력 text 태그 : <input type="text"/>
+입력 비밀번호 태그 : <input type="password"/>
+버튼 태그 : button 태그
+
+
+----------------------------------------------------------------------------
+
+* table 태그 - ex) 게시판
+
+  <table>
+	<thead>   // 테이블 제목(컬럼)
+		<tr>   // 한줄을 의미함
+			<th>이름</th>
+			<th>나이</th>
+		</tr>
+	</thead>
+	<tbody>   // 컬럼에 해당하는 데이터
+		<tr>
+			<td>홍길동</td>
+			<td>30</td>
+		</tr>
+	</tbody>
+  </table>
+
+
+----------------------------------------------------------------------------
+
+
+* 태그
+
+홈페이지 메뉴 : ul (Unorder List)
+                    li (List Item)
+                    ol (Order List) - 잘 사용하지 않음
+
+----------------------------------------------------------------------------
+
+
+	<ul>
+		<li><a href="쇼핑몰주소">상의</a></li>
+		<li><a href="쇼핑몰주소">하의</a></li>
+		<li><a href="쇼핑몰주소">신발</a></li>
+		<li><a href="쇼핑몰주소">모자</a></li>
+	</ul>
+
+
+----------------------------------------------------------------------------
+
+
+	<ol>
+		<li>JAVA</li>
+		<li>Python</li>
+		<li>HTML</li>
+		<li>SQL</li>
+	</ol>
+
+
+----------------------------------------------------------------------------
+
+
+* CSS : 태그에 스타일을 입힌것 - ex) 옷도 입고 화장도 한 상태
+
+  div : 공간(구역) - 실무에서 80% 이상 사용 함.
+
+
+----------------------------------------------------------------------------
+
+
+* 태그마다 포지션을 가지고 있음
+  포지션 디폴트 값이 static
+  움직이게 하고 싶으면 relative으로 변경해야 함
+
+     1. static : 위치를 지정하지 않을 때 - 움직이지 않음
+     2. relative : 원래 자리 기준으로 움직임
+
+
+----------------------------------------------------------------------------
+
+* SQL
+
+  1. Join
+
+     1) 교집합만 찾을 때
+	select
+		e.ename
+	from 
+		emp as e
+		inner join dept as d
+		on e.deptno = d.deptno
+
+     2) 교집합이 아닌 데이터도 찾을 때 - 찾고자 하는 데이터가 있는 방향으로 조인을 쓰면 됨
+	select
+		*
+	from
+		emp as e
+		right join dept as d
+		on e.deptno = d.deptno
+
+     3) 차집합
+	select
+		*
+	from
+		emp as e
+		right join dept as d
+		on e.deptno = d.deptno
+	where e.empno is null
+
+
+----------------------------------------------------------------------------
+
+
+* 서브 쿼리 : 쿼리에 또 쿼리가 옴
+  서브쿼리를 쓰기 전에 정말 필요한지 한번 더 생각하기 - 서브쿼리는 비용을 많이 잡아 먹음.
+
+  1. select 절에 오는 서브 쿼리 (스칼라 서브쿼리)
+  2. where 절에 오는 서브 쿼리 (중첩 서브쿼리)
+  3. from 절에 오는 서브 쿼리 (인라인 뷰)
+
+
+
+
+* 서브 쿼리가 가능한 곳 (1~3번까지는 많이 사용 함)
+
+  1. select
+	A 테이블(감기 관련),
+	B 테이블(코로나 확진자 관련),
+	C 테이블(오미크론 확진자 관련)
+     1) 교집합 데이터(컬럼)이 없을 때 사용 -  통계 낼 때 많이 사용 함
+     2) 서브쿼리가 먼저 실행 된 후에 외부쿼리 실행
+	select
+		count(*),    // 감기 확진 수
+		(select count(*) from 코로나) as 코로나 확진,
+		(select count(*) from 오미크론) as 오미크론 확진
+	from 감기
+
+  2. from
+     1) 데이터를 먼저 필터링 해야 할 때
+        ex) emp 테이블에 급여가 3천 미만인 사람의 데이터로 무엇인가를 활용 할 때
+	select
+		e.ename,
+		e.job
+	from
+	(
+		select
+			ename,
+			job
+		from emp
+		where sal < 3000
+	) as e
+
+  3. where
+     1) 단일행
+	where ename = (select ename from emp where empno=3000)
+     2) 다중행 - "'in'은 실제로 존재하는 데이터의 값을 비교"하기 때문에
+                   비용이 많이 나옴. 그래서 where에 in은 쓰지 않아야 됨.
+                   데이터가 많아질수록 속도가 느려짐.
+	select * from emp where ename in (select ename from emp where sal<3000)
+
+  4. having
+
+  5. order by
+
+  6. insert
+
+  7. update set
+
+
+----------------------------------------------------------------------------
+
+* 프로그래머스 SQL 레벨4
+  '헤비 유저가 소유한 장소' 키 포인트
+
+     이 서비스에서는 공간을 2개 이상 등록한 사람
+     (HOST_ID가 2개 이상인 사람
+
+     ID는 겹칠 수 없고, HOST_ID는 겹침
+     (기본키(PK) : 고유 번호)
+
+       1. HOST_ID가 2개 이상인 사람 조회 쿼리.
+	SELECT
+		host_id,
+		count(*)
+	from places
+	group by host_id
+	having count(*) >= 2
+
+       2. 1번에서 작성한것을, 프롬 서브쿼리로 사용해서 문제 풀이
+	select
+		p.id,
+		p.name,
+		h.host_id
+	from
+	(
+		SELECT
+		host_id,
+		count(*)
+		from places
+		group by host_id
+		having count(*) >= 2
+	) as h
+	inner join places as p
+	on h.host_id = p.host_id
+	order by p.id
+
