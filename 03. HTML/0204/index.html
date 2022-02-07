@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FORM 태그 공부</title>
+        <style>
+            table {
+            margin: auto;
+            box-shadow: 0 3px 7px grey;
+            background-color: white;
+            }
+    
+            table:hover {
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+            }
+    
+            tr {
+            border: 1px solid #444444;
+            }
+    
+            tr:nth-child(even) {
+            background-color: #eaeaeb;
+            }
+    
+            thead {
+            box-shadow: 0 1px 5px grey;
+            }
+    
+            th {
+            padding: 1rem 2rem;
+            letter-spacing: 0.4rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-align: center;
+            }
+    
+            td {
+            padding: 1rem 2rem;
+            text-align: center;
+            }
+        </style>
+    </head>
+<body>
+    
+    <h3>form 태그</h3>
+    <form action="웹서버 주소"></form>
+        아이디 : <input type="text"/>
+        비밀번호 : <input type="password"/>
+        회원 이메일 : <input type="email"/>
+        <input type="submit">
+
+
+
+    <br><br><br><br><br><br>
+    ----------------------------------------------------------------------------------------------
+    <br><br><br><br><br><br>
+
+
+
+    <h3>table 태그</h3>
+        <table>
+            <thead>
+                <tr>   <!-- tr : table row : 테이블 행-->
+                    <th>출장비 내역</th>   <!-- th : table head : 테이블의 제목(컬럼) -->
+                    <th>금액</th>
+                </tr>
+                <tr>
+                    <td>교통비</td>
+                    <td>30,000</td>
+                </tr>
+                <tr>
+                    <td>숙박비</td>
+                    <td>50,000</td>
+                </tr>
+                <tr>
+                    <td>식비</td>
+                    <td>500,000</td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>   <!-- food 태그도 있음 -->
+                <tr>
+                    <td>총 합계</td>
+                    <td>630,000</td>
+                </tr>
+            </tfoot>
+        </table>
+
+
+
+    <br><br><br><br><br><br>
+    ----------------------------------------------------------------------------------------------
+    <br><br><br><br><br><br>
+
+
+
+    <h3>시간표 만들기</h3>
+        <table>
+            <thread>
+                <tr>
+                    <th>월요일</th>
+                    <th>화요일</th>
+                    <th>수요일</th>
+                </tr>
+                <tr>
+                    <td colspan="2">필라테스</td>
+                    <td>요가</td>
+                </tr>
+                <tr>
+                    <td>복싱</td>
+                    <td>레슬링</td>
+                    <td rowspan="2">영상</td>
+                </tr>
+                <tr>
+                    <td>웨이트 훈련</td>
+                    <td>크로스핏</td>
+                </tr>
+            </thread>
+            <tbody></tbody>
+        </table>
+
+
+
+    <br><br><br><br><br><br>
+    ----------------------------------------------------------------------------------------------
+    <br><br><br><br><br><br>
+
+
+
+    <h3>개인 시간표</h3>
+        <table>
+            <thread>
+                <tr>
+                    <th> </th>
+                    <th>시간</th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                    <th>토</th>
+                </tr>
+                <tr>
+                    <td>오전반</td>
+                    <td>11:00 ~ 12:00</td>
+                    <td colspan="2">유도</td>
+                    <td>레슬링</td>
+                    <td colspan="2">유도</td>
+                    <td rowspan="5">자유수업</td>
+                </tr>
+                <tr>
+                    <td>오후반</td>
+                    <td>12:00 ~ 13:00</td>
+                    <td colspan="5">웨이트 트레이닝</td>\
+                </tr>
+                <tr>
+                    <td>키즈부</td>
+                    <td>14:00 ~ 15:30</td>
+                    <td colspan="2">유도</td>
+                    <td>레슬링</td>
+                    <td colspan="2">유도</td>
+                </tr>
+                <tr>
+                    <td>저녁1부</td>
+                    <td>16:30 ~ 21:00</td>
+                    <td colspan="2">유도</td>
+                    <td>레슬링</td>
+                    <td colspan="2">유도</td>
+                </tr>
+                <tr>
+                    <td>저녁2부</td>
+                    <td>21:00 ~ 22:00</td>
+                    <td colspan="2">유도</td>
+                    <td>레슬링</td>
+                    <td colspan="2">유도</td>
+                </tr>
+                <tr>
+                    <td>야간반</td>
+                    <td>22:30 ~ 23:30</td>
+                    <td colspan="5">웨이트 트레이닝</td>
+                </tr>
+            </thread>
+        </table>
+
+
+
+    <br><br><br><br><br><br>
+    ----------------------------------------------------------------------------------------------
+    <br><br><br><br><br><br>
+
+
+
+    <h3>지도</h3>
+        <!-- 지도를 표시할 div 입니다 -->
+        <div id="map" style="width: 100%; height: 350px"></div>
+
+        <script
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f283c9704c76d19621ebd286c77b5d5a">
+        </script>
+        <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+        mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 15, // 지도의 확대 레벨
+        };
+
+        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        </script>
+
+
+
+    <br><br><br><br><br><br>
+    
+
+</body>
+</html>
