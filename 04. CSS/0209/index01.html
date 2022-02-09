@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 'style.css'에 적힌 것들을 불러옴 --> 
+    <link rel="stylesheet" href="style.css">  
+        
+    <script>   /* 자바스크립트 메소드 */
+        function okok() {
+            alert('인증 받기');
+        }
+        function doSuccess() {     /* 버튼을 누르게 되면 창이 뜨게 함 */
+            alert('예약 완료');
+        }
+        function doFail() {
+            alert('예약 취소');
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="book-form">
+            <h4>아이디 :</h4>
+            <input class="id" type="text" placeholder="ID 입력" maxlength="8" />
+            <h3>비밀번호 :</h3>
+            <input class="pass" type="password" placeholder="PW 입력" maxlength="12" />
+            <h3>비밀번호 재확인 :</h3>
+            <input class="repass" type="password" maxlength="12" />
+            <h3>이름 :</h3>
+            <input class="name" type="text" />
+            <h3>생년월일 :</h3>
+            <input class="year" type="number" placeholder="년(4자)" />
+            <select name="" class="month">
+                <option value="">월</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <input class="day" type="number" placeholder="일" />
+            <h3>성별</h3>
+            <select name="" class="gender">
+                <option value="">성별</option>
+                <option value="w">여성</option>
+                <option value="m">남성</option>
+            </select>
+            <h3>본인 확인 이메일</h3>
+            <input class="email" type="email" placeholder="email 입력" />
+            <h3>휴대전화</h3>
+            <input class="phone" type="text" placeholder="대한민국 +82" readonly />
+            <input class="phonenum" type="number" />
+            <input class="ok" type="button" value="인증받기" onclick="okok();" />
+            <input class="pass" type="number" placeholder="인증번호 입력" />
+
+            <br><br>
+            <input class="true" type="button" value="예약완료" onclick="doSuccess();" />
+            <input class="false" type="button" value="예약취소" onclick="doFail();" />
+        </div>
+    </div>
+</body>
+</html>
