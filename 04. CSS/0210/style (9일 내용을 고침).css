@@ -1,0 +1,127 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(rgba(58, 58, 58, 0.450), rgba(58, 58, 58, 0.450)), url(10.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+}
+
+.book-form {
+    border-radius: 5px;
+    width: 450px;
+    height: auto;
+    border: 3px solid black;
+    margin: 10% auto 0;    /* auto는 자동으로 맞춰줌 */
+    padding: 15px 10px 5px;
+    background-color: rgba(255, 24, 24, 0);
+}
+
+.book-form input {
+    border-radius: 10px;   /* 숫자를 크게 줄수록 모서리가 큰 곡선으로 변함 */
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.book-form .ok {
+    cursor: pointer;   /* 버튼 위에 마우스를 올리면 마우스 모양이 변함 */
+    background-color: rgba(0, 0, 0, 0);
+    border-color: black;    /* 버튼 테두리 색 */
+    color: white;
+    height: 40px;
+    width: 30%;
+    font-size: 15px;
+    text-shadow:3px 3px 5px rgb(0, 0, 0)
+}
+
+.book-form .true {
+    cursor: pointer;   /* 버튼 위에 마우스를 올리면 마우스 모양이 변함 */
+    background-color: rgba(0, 0, 0, 0);
+    border-color: black;    /* 버튼 테두리 색 */
+    color: white;
+    font-size: 20px;
+    text-shadow:3px 3px 5px rgb(0, 0, 0)
+}
+
+.book-form .false {
+    cursor: pointer;   /* 버튼 위에 마우스를 올리면 마우스 모양이 변함 */
+    background-color: rgba(0, 0, 0, 0);
+    border-color: black;
+    color: white;
+    font-size: 20px;
+    text-shadow:3px 3px 5px rgb(0, 0, 0)
+}
+
+.book-form .id {
+    margin: 10px 0;
+    height: 40px;
+}
+
+.book-form .pass {
+    margin: 10px 0;
+    height: 40px;
+}
+
+.book-form .repass {
+    margin: 10px 0;
+    height: 40px;
+}
+
+.book-form .name {
+    margin: 10px 0;
+    height: 40px;
+}
+
+.book-form .year {
+    margin: 10px 0;
+    width: 32%;
+    height: 40px;
+}
+
+.book-form .month {
+    margin: 10px 0;
+    width: 32%;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.book-form .day {
+    margin: 10px 0;
+    width: 32%;
+    height: 40px;
+}
+
+.book-form .gender {
+    margin: 10px 0;
+    height: 40px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.book-form .email {
+    margin: 10px 0;
+    height: 40px;
+}
+
+.book-form .phone {
+    margin: 10px 0;
+    height: 40px;
+    width: 25%;
+}
+
+.book-form .phonenum {
+    margin: 10px 0;
+    height: 40px;
+    width: 42%;
+}
