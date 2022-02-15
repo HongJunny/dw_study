@@ -1,0 +1,24 @@
+* 테이블 만드는 방법
+
+  CREATE TABLE emp
+  (
+	empno int(11),
+	ename varchar(20),
+	deptno int(5),
+	foreign key (deptno) references dept(deptno)    // 첫번째 괄호는 emp 테이블, 두번째 괄호는 내가 참조하고자 하는 테이블
+						 // 참조하고자 하는 테이블은 고유한 데이터를 갖고 있어야 한다.
+	// 참조키(외래키)는 컬럼이름이 중요한것이 아니라, 데이터 타입이 같아야 한다.
+  )
+
+
+  - on delete : 부모(dept) 테이블에 "삭제" 이벤트가 발생하면, 자식(emp) 데이터에 이벤트가 발생
+  - on update : 부모(dept) 테이블에 "수정" 이벤트가 발생하면, 자식(emp) 데이터에 이벤트가 발생
+
+  - 이벤트 종류 : 아래 적힌것중에서 하나 선택
+       ex)  foreign key (deptno) references dept(deptno) on delete cascade
+	1) cascade : 자섹 데이터 '삭제 or 수정'
+	2) set null : 자식 데이터를 null로 업데이트
+	3) set default : 자식 데이터를 default 값으로 업데이트
+	4) restrict (default) : 부모 데이터 '삭제 or 수정' 불가능
+	5) NO ACTION : 자식 테이블의 데이터는 변경되지 않음
+       관계형 데이터베이스만 이벤트가 있음
