@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+    .header {
+        position: relative;
+        height: 500px;
+        width: 100%;
+        /* 처음에는 백그라운드칼라를 이용해서 크기 조절. */
+        /* 조절이 끝난 후에는 백그라운데칼라를 삭제 혹은 주석처리 */
+        /* background-color: rgb(210, 210, 211); */
+        background-image: linear-gradient(
+            rgba(4, 10, 20, 0.8), rgba(4, 10, 20, 0.8)
+            ),
+            url(0215.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    .nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav .img {
+        width: 135px;
+        height: 103px;
+        background-image: linear-gradient(
+            rgba(4, 10, 20, 0.8), rgba(4, 10, 20, 0.8)
+            ),
+            url(1.jpg);
+        border: 1px solid black;
+        border-radius: 60px;
+        
+    }
+
+    .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+    }
+
+    .nav-links ul li a {
+        color: white;
+        text-decoration: none;    /* 밑줄 제거 */
+        font-size: 25px;
+        font-weight: 800;
+    }
+
+    .nav-links ul li:hover {
+        transition: 700ms;
+        background-color: brown;
+        border-radius: 5px;
+    }
+
+    .text-box {
+        position: absolute;
+        width: 90%;
+        top: 50%;
+        left: 5%;
+        text-align: center;
+        color: white;
+    }
+
+    .text-box h1 {
+        font-size: 60px;
+    }
+
+    .text-box p {
+        font-size: 16px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+
+    .text-box a {
+        text-decoration: none;
+        color: white;
+        border: 1px solid white;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 12px 34px;
+    }
+
+    .text-box a:hover {
+        border: 1px solid brown;
+        background-color: brown;
+        transition: 1s;
+    }
+
+
+
+    table {
+        margin: auto;
+        margin-top: 200px;
+        margin-bottom: 200px;
+        box-shadow: 0 3px 7px grey;
+        background-color: rgb(218, 218, 218);
+    }
+    
+    table:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+    }
+    
+    tr {
+        border: 1px solid #444444;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #eaeaeb;
+    }
+    
+    thead {
+        box-shadow: 0 1px 5px grey;
+    }
+    
+    th {
+        padding: 1rem 2rem;
+        letter-spacing: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-align: center;
+    }
+    
+    td {
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+
+
+    .card1 {
+        height: 430px;
+        margin: 50px auto 0;
+    }
+    .card {
+        margin: 10px;
+        border-radius: 8px;
+        height: 400px;
+        width: 300px;
+        overflow: hidden;
+        box-shadow: 0 20px 35px black;
+        transform: scale(1);
+        transition: 0.3s;
+        display: inline-block   
+    }
+    .card:hover {   
+        cursor: pointer;
+        background-color: rgb(252, 222, 178);
+        transform: scale(0.85);
+    }
+    .card img {
+        width: 300px;
+        height: 300px;
+    }
+    .text-wrap {
+        padding: 15px;
+        text-align: center;
+    }
+    .text-wrap h1 {
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .text-wrap p {
+        line-height: 2;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+
+            <div class="nav">
+                <div class="img"></div>
+                <div class="nav-links">  <!-- 기종에 맞게 구현 하려면, div에 클래스를 줘야 됨 -->
+                    <ul>
+                        <li><a href="#">HOME</a></li>   <!-- 링크에 '#'을 넣으면, 아직 링크가 없음을 의미 함 -->
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">PROGRAMS</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-box">
+                <h1>모두 모여</h1>
+                <p>이것저것 마음대로 올리는 내 공간<br>성인 일기장(?)</p>
+                <!-- 링크 태그를, 버튼처럼 꾸미기 -->
+                <a href="#">사진 감상</a> 
+            </div>
+        </div>
+
+        <div class="section">
+            <table>
+                <thread>
+                    <tr>
+                        <th> </th>
+                        <th>시간</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                    <tr>
+                        <td>오전반</td>
+                        <td>11:00 ~ 12:00</td>
+                        <td colspan="2">유도</td>
+                        <td>레슬링</td>
+                        <td colspan="2">유도</td>
+                        <td rowspan="5">자유수업</td>
+                    </tr>
+                    <tr>
+                        <td>오후반</td>
+                        <td>12:00 ~ 13:00</td>
+                        <td colspan="5">웨이트 트레이닝</td>
+                    </tr>
+                    <tr>
+                        <td>키즈부</td>
+                        <td>14:00 ~ 15:30</td>
+                        <td colspan="2">유도</td>
+                        <td>레슬링</td>
+                        <td colspan="2">유도</td>
+                    </tr>
+                    <tr>
+                        <td>저녁1부</td>
+                        <td>16:30 ~ 21:00</td>
+                        <td colspan="2">유도</td>
+                        <td>레슬링</td>
+                        <td colspan="2">유도</td>
+                    </tr>
+                    <tr>
+                        <td>저녁2부</td>
+                        <td>21:00 ~ 22:00</td>
+                        <td colspan="2">유도</td>
+                        <td>레슬링</td>
+                        <td colspan="2">유도</td>
+                    </tr>
+                    <tr>
+                        <td>야간반</td>
+                        <td>22:30 ~ 23:30</td>
+                        <td colspan="5">웨이트 트레이닝</td>
+                    </tr>
+                </thread>
+            </table>
+        </div>
+
+        <div class="card1">
+            <div class="card">
+                <img src="파이리.gif" alt="">
+                <div class="text-wrap">
+                    <h1>파이리</h1>
+                    <p>도룡뇽 포켓몬. 타입은 불꽃이다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="꼬북이.jpg" alt="">
+                <div class="text-wrap">
+                    <h1>꼬북이</h1>
+                    <p>거북이 포켓몬. 타입은 물이다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="이상해씨.jpg" alt="">
+                <div class="text-wrap">
+                    <h1>이상해씨</h1>
+                    <p>씨앗 포켓몬. 타입은 물이다.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
