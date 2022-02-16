@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {    /* 인스타 아이콘 모양 만들기 */
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .nemo {
+            position: relative;
+            margin: 100px auto 0px;
+            height: 200px;
+            width: 200px;
+            background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);;
+            display: flex;    /* 아래 2줄까지 같이 적으면, 가운데로 자동 정렬 */
+            align-items: center;
+            justify-content: center;
+            border-radius: 30%;
+        }
+        .nemo01 {
+            margin: auto;
+            height: 150px;
+            width: 150px;
+            background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);;
+            border: 10px solid white;
+            display: flex;    /* 아래 2줄까지 같이 적으면, 가운데로 자동 정렬 */
+            align-items: center;
+            justify-content: center;
+            border-radius: 24%;
+        }
+        .nemo02 {
+            margin: auto;
+            height: 80px;
+            width: 80px;
+            background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf);;
+            border: 10px solid white;
+            border-radius: 50%;
+        }
+        .nemo01::after {   /* 네모 박스 옆에 해당 태그가 들어가게 */
+            top: 47px;
+            right: 47px;
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nemo">
+            <div class="nemo01">
+                <div class="nemo02">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

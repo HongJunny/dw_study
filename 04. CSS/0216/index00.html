@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>   /* 주로 관리자 페이지는 메뉴가 옆에 있음 , "싸이드 헤더" */
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: rgb(255, 238, 202);
+            padding: 20px 30px;
+        }
+
+        .nav-links {
+            list-style: none;     /* 메뉴 옆의 점을 제거 */
+        }
+
+        .nav-links li {
+            padding: 10px 0;
+        }
+
+        .nav-links li:hover {
+            background-color: rgba(255, 255, 0, 0.473);
+            border-radius: 6px;
+            transition: 0.08s;
+        }
+
+        .nav-links a {
+            text-decoration: none;     /* 텍스트에 밑줄 제거 */
+            color: rgb(128, 40, 40);
+            padding: 10px 14px;
+        }
+
+        .nav-links li a i {
+            font-size: 22px;
+            margin-right: 20px;
+        }
+
+        
+
+
+    </style>
+
+    <script
+        src="https://kit.fontawesome.com/ec2e6610a2.js"
+        crossorigin="anonymous">
+    </script>
+
+</head>
+<body>
+    <div class="side-nav">
+        <div class="header">
+            <ul class="nav-links">    <!-- 아이콘 고르는 싸이트 : https://fontawesome.com/ -->
+                <li><a href="#"><i class="fa-solid fa-house"></i> 홈</a></li>   <!-- 아이콘 태그는 i -->
+                <li><a href="#"><i class="fa-solid fa-comment-dots"></i> 메세지</a></li>
+                <li><a href="#"><i class="fa-solid fa-baseball-bat-ball"></i>스포츠</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> 세팅</a></li>
+            </ul>
+        </div>
+        
+    </div>
+</body>
+</html>
