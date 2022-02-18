@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .game {
+        margin: 30px auto 0;
+        width: 80%;
+        height: auto;
+        background-color: #5e9c39;
+        border-radius: 10px;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 2%;
+      }
+      .card {
+        margin: 1%;
+        position: relative;
+        flex-basis: 10%;
+        cursor: pointer;
+      }
+      .card:hover {
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.356);
+      }
+      .card-front {
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .card-front img {
+        top: 0;
+        position: absolute;
+        width: 150px;
+        height: 240px;
+      }
+      .card-front:hover {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="section game">
+        <div class="row">
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="8.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="1광.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="비광2.jpg" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="3.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="22.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="또ㅓㅇ.PNG" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="똥똥똥.PNG" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <img src="1.jpg" alt="" />
+            <div class="card-front">
+              <img src="8.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

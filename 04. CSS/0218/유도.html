@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .row {
+        margin-top: 2%;
+        display: flex;
+        justify-content: space-between;
+      }
+      /* 갤러리 */
+      .gallery {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .gallery h1 {
+        font-size: 36px;
+        font-weight: 600;
+        color: white;
+      }
+
+      .gallery p {
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        padding: 10px;
+      }
+
+      .gallery-col {
+        position: relative;
+        overflow: hidden;
+        flex-basis: 24%;
+        border-radius: 10px;
+        margin-bottom: 5%;
+      }
+
+      .gallery-col img {
+        width: 100%;
+        height: 90%;
+        border-radius: 10px;
+      }
+
+      .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        transition: 0.5s;
+        width: 100%;
+        height: 90%;
+      }
+
+      .layer:hover {
+        background: rgba(232, 232, 232, 0.8);
+      }
+
+      .layer h3 {
+        position: absolute;
+        color: rgba(46, 49, 49, 1);
+        font-size: 20px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .layer:hover h3 {
+        bottom: 49%;
+        opacity: 1;
+      }
+      .line {
+          height: 110px;
+          width: 100%;
+          background-color: blue;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section class="gallery">
+        <div class="line">
+            <h1>유도</h1>
+            <p>
+                맨손으로 상대와 서로 맞잡고 메치기, 누르기, 조르기, 꺽기 등을 주 기술로 하여
+                공격과 방어를 연습하며 심신을 단련시키고 정신을 수양하는 자아실현의 운동
+            </p>
+        </div>
+        <div class="row">
+          <div class="gallery-col">
+            <img src="img/01.jpg" />
+            <div class="layer">
+              <h3>정좌</h3>
+            </div>
+          </div>
+          <div class="gallery-col">
+            <img src="img/02.jpg" />
+            <div class="layer">
+              <h3>발기술 - 밭다리</h3>
+            </div>
+          </div>
+          <div class="gallery-col">
+            <img src="img/03.jpg" />
+            <div class="layer">
+              <h3>손기술 - 업어치기</h3>
+            </div>
+          </div>
+          <div class="gallery-col">
+            <img src="img/04.jpg" />
+            <div class="layer">
+              <h3>허리기술 - 허리후리기</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
