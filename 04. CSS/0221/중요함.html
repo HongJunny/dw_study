@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .row {
+            margin: 0 auto 0;
+            width: 80%;
+            height: 200px;
+            background-color: turquoise;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .item {
+            width: 20%;
+            height: 180px;
+            background-color: gray;
+        }
+
+        .section02 .row .item:nth-child(1) {
+            background-color: red;
+            flex-basis: 59%;
+        }
+
+        .blackbox01 {
+            margin-top: 36px;
+            position: absolute;
+            width: 300px;
+            height: 40px;
+            background-color: black;
+            animation: b-box01 1.5s linear infinite;
+        }
+
+        .blackbox02 {
+            margin-top: 105px;
+            position: absolute;
+            width: 300px;
+            height: 40px;
+            background-color: black;
+            animation: b-box02 1.5s linear infinite;
+        }
+
+        @keyframes b-box01 {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 300px
+            }
+            100% {
+                width: 0%;
+            }
+        }
+
+        @keyframes b-box02 {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 300px
+            }
+            100% {
+                width: 0%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <section class="section01">
+            <div class="row">
+                <div class="item">
+
+                </div>
+                <div class="item">
+
+                </div>
+                <div class="item">
+
+                </div>
+            </div>
+        </section>
+        <section class="section02">
+            <div class="row">
+                <div class="item">
+                    <div class="blackbox01">
+
+                    </div>
+                    <div class="blackbox02">
+                        
+                    </div>
+                </div>
+                <div class="item">
+
+                </div>
+                <div class="item">
+
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
