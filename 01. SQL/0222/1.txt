@@ -1,0 +1,36 @@
+* 부서 테이블이 없다고 가정
+
+EMP 테이블
+  empno, ename, dname, loc
+  100,     홍길동, 개발팀,  대전
+
+부서가 신설될때마다 empno와 ename에는 null이 들어감
+  테이블에 null 데이터가 많으면 정규화(모델링) 고려 대상
+
+update = ( delete -> insert )
+
+
+-----------------------------------------------------------------
+
+
+* 데이터가 많아지면 index를 사용하는것이 좋다.
+  ex) 데이터 = 책 내용
+       index = 책 목차
+
+  PK (Primary Key) : 중복 사용 X
+                         자동으로 index가 붙음
+  FK (Foreign Key) : 중복 사용 O
+                            중복을 하고 싶지 않을때는 'unizue key' 사용
+                               문법 1)   CREATE TABLE emp(
+                                           deptno int,
+                                           UNIQUE KEY emp (deptno)
+                                           )
+                               문법 2)   CREATE TABLE emp(
+                                           deptno int UNIQUE KEY
+                                           )
+                               문법1과 문법2는 같음
+                         index 없음
+                         index를 생성해야 함
+                            문법)   CREATE INDEX <인덱스명>
+                                     ON <테이블명> (컬럼명1, 컬럼명2, ...);
+
