@@ -1,7 +1,7 @@
 var information = {
     // key : value
     "name" : "Hong Jun ho",
-    "age" : 37,
+    "age" : 20,
     "address" : "대전광역시",
     "isMarri" : false
 }   // json은 key와 value로 구성.
