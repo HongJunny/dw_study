@@ -1,0 +1,31 @@
+
+* flex와 grid 차이점
+  flex : 1차원 방향
+  grid : 2차원 방향
+
+* flex와 grid 공통점
+  둘 다 conteiner 안에 item이 있는 구조
+  display : 'flex' or 'grid'
+
+     ex) 인스타그램 : 사진 피드 grid로 구현
+          유튜브 : 사진 피드 flex로 구현
+
+
+------------------------------------------------------------------
+
+
+* 'grid-gap'을 이용해서 item과 item 사이의 간격을 조절 함.
+
+
+------------------------------------------------------------------
+
+
+* 글 앞의 점을 바꿔주는 css  - '?'나 한글 등등으로도 바꿀 수 있음
+
+	ul li::before {
+		content: ' ';
+		color: red;
+		font-weight: bold;
+		margin-right: 8px;
+	}
+
