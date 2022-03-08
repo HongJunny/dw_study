@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            width: 100%;
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .dropdown {
+            flex-basis: 30%;
+            padding: 2%;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown button {
+            font-size: 40px;
+            color: white;
+            background: transparent;
+            border: none;
+            padding: 14px 16px;
+            cursor: pointer;
+        }
+
+        .dropdown button:hover {
+            background-color: red;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            display: none;
+            width: 160px;
+            background-color: white;
+        }
+
+        .dropdown-content a {
+            display: block;
+            /* 가로 정렬을 세로 정렬로 바꿈 */
+            padding: 12px 16px;
+            text-decoration: none;
+            text-align: left;
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="conteiner">
+        <div class="header">
+            <div class="dropdown">
+                <button>Dropdown</button>
+                <div class="dropdown-content">
+                    <a href="#">Link1</a>
+                    <a href="#">Link2</a>
+                    <a href="#">Link3</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
