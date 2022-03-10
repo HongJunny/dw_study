@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .blue {
+            background-color: blue;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            border: 5px solid skyblue;
+        }
+
+        .red {
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            border: 5px solid skyblue;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- javascript를 이용한 css 컨트롤 -->
+    <div class="conteiner">
+        <!-- onclick에서 javascript에 정의한 함수이름을 위치 시킴 -->
+        <!-- onclick : 클릭시 함수 호출 -->
+        <div id="blue" class="blue" onclick="changeColor()"> <!-- 클릭하면 색이 바뀌게 -->
+        </div>
+        <div id="red" class="red" onclick="hide()"> <!-- 빨강을 클릭하면 위가 사라지게 -->
+        </div>
+        <div class="clear">
+            <button onclick="setInitalization()">ALL CLEAR</button>  <!-- 버튼을 누르면 초기 상태로 되돌리기 -->
+        </div>
+        <div class="form"> <!-- 두개의 input을 비교 했을때, 서로 맞으면 창이 뜨게 -->
+            <input id="userID" type="password" value="" />
+            <input id="userID2" type="password" value="" onkeyup="checkUserId()" />  <!-- onkeyup : 키보드를 눌렀다가 놨을때 실행 -->
+        </div>
+    </div>
+    <script>
+        function checkUserId() {
+            var userId = document.getElementById("userID").value;
+            var userId2 = document.getElementById("userID2").value;
+            if(userId == userId2) {
+                confirm("비밀번호가 일치 합니다.");
+            }
+        }
+        // 함수(메소드)
+        // javascript 함수는 리턴타입이 없다.
+        function changeColor() {
+            var color = document.getElementById("blue").style.backgroundColor;
+            if(color == 'black') {
+                alert("배경색은 이미 검정색입니다.");
+                return 0;
+            }
+            // 바닐라 스크립트 문법
+            document.getElementById("blue").style.backgroundColor="black";  // getElementById = div id를 불러온것임
+            console.log(color);
+        }
+        function hide() {
+            document.getElementById("blue").style.display="none";
+        }
+        function setInitalization() {
+            document.getElementById("blue").style.backgroundColor="blue";
+            document.getElementById("blue").style.display="block";
+        }
+    </script>
+</body>
+</html>
