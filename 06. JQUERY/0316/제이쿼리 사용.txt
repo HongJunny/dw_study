@@ -1,0 +1,5 @@
+* 제이쿼리 사용
+
+구글에서 "jquery" 검색  -->  홈페이지 아래에 나온 "CDN" 클릭 
+-->  "jQuery Core 3.6.0 - uncompressed, minified, slim, slim minified" 에서 "minified"를 누르고 복사
+-->  body 태그의 맨 아래에 붙여넣기

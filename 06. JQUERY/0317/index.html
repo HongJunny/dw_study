@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .row {
+            width: 1200px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid darkgoldenrod;
+            display: flex;
+        }
+
+        .item {
+            flex-basis: 20%;
+            background-color: #777;
+            border: 1px solid black;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 3%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="conteiner">
+        <button onclick="createItem()">append</button>  <!-- onclick 으로 사용 -->
+        <button id="children">children</button>  <!-- id 로 사용 -->
+        <div class="row">
+            <div class="item" onclick="clickItem(this)">
+                한가람식당
+            </div>
+        </div>
+    </div>
+</body>
+<script 
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+</script>
+<script>
+    function clickItem(value) {
+        console.log(value);
+    }
+
+
+    $('#children').on('click', function () {  // on은 '이벤트를 받을 준비가 됨'이라는 뜻 (바인딩)
+            // function 뒤에 쓴것은 '익명 함수'
+            // 자바 스크립트는 매개변수로 함수가 가능함.
+            // 자바 스크립트에서는 이런 문법이 엄청 많이 나옴 - 코딩을 짧게 하기 위해서
+        var len = $(".row").children().length;
+        console.log(len);  // 자식 요소 접근
+        console.log($(".row").children());  // 자식에 대한 상세 정보를 가져옴
+        console.log($(".row").children()[0].innerHTML);
+    });
+
+    // function name() {
+        // return function namex() {  // 자바는 리턴 뒤에 함수 사용을 못하지만, 자바 스크립트는 가능함 (클로저)
+
+        // }
+    // }
+    
+    function createItem() {  
+        // 버튼을 1번 클릭하면, 아이템이 5개 만들어짐
+        // 아이템이 6장 넘어가면 실행 안되게
+        var len = $(".row").children().length;
+        if(len<6) {
+            for(var i=1; i<=5; i++) {
+                $(".row").append('<div class="item"></div>');
+            }
+        }
+        else {
+            alert("아이템 길이가 6을 넘었습니다.");
+        }
+    }
+</script>
+</html>

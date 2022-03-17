@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .popup {
+            width: 1000px;
+            height: 300px;
+            background-color: gray;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .conteiner {
+            width: 500px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 3%;
+            font-size: 24px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="popup" class="popup">  <!-- 팝업 -->
+        <div class="close" onclick="closePopup()">
+
+        </div>
+    </div>
+    <div id="reset" class="conteiner">
+        <button onclick="openPopup()">확인</button>
+    </div>
+    <script>
+        function closePopup() {
+            // 바닐라 js 문법
+            // document.getElementById("popup").style.display="none";  // 클릭하면 사라짐
+
+            // 제이쿼리 문법
+            $("#popup").hide();
+            // $("#popup").css("display", "none");
+
+            // 팝업을 실행 하면 취소 버튼이 생기게.
+            $(".conteiner").append('<button onclick="openPopup()">취소</button>')
+        }
+        function openPopup() {
+            var style = document.getElementById("popup").style.display;
+            // "A == B" ----> A는 B와 같다.
+            // "A === B" ---> A는 B와 같고, 자료형도 같다.
+            if(style == "none") {
+                // document.getElementById("popup").style.display="block";
+                $("#popup").show();
+                return true;
+            }
+        }
+    </script>
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</body>
+</html>
