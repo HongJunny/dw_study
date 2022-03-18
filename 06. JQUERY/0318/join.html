@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        margin: 100px auto;
+        background: rgba(232, 232, 232, 0.5);
+        width: 800px;
+        height: auto;
+        padding: 3%;
+      }
+      .container h1 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .container input {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      .container select {
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+      }
+      .row input {
+        flex-basis: 30%;
+      }
+      .row select {
+        flex-basis: 30%;
+      }
+      button {
+        color: #fff;
+        border: solid 1px rgba(0, 0, 0, 0.08);
+        background-color: #03c75a;
+        width: 100%;
+        padding: 15px 0 15px;
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>회원 가입</h1>
+      <label for="userId">아이디</label>
+      <input id="userId" type="text" />
+      <label for="password">비밀번호</label>
+      <input id="password" type="password" />
+      <label for="rePassword">비밀번호 재확인</label>
+      <input id="rePassword" type="password" />
+      <label for="userName">이름</label>
+      <input id="userName" type="text" />
+      <label for="yy">생년월일</label>
+      <div class="row">
+        <input id="yy" type="text" placeholder="년(4자)" />
+        <select name="gender" id="pet-select">
+          <option selected>월</option>
+          <option value="01">1</option>
+          <option value="02">2</option>
+          <option value="03">3</option>
+          <option value="04">4</option>
+          <option value="05">5</option>
+          <option value="06">6</option>
+          <option value="07">7</option>
+          <option value="08">8</option>
+          <option value="09">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <label for="dd"></label>
+        <input id="dd" type="text" placeholder="일" />
+      </div>
+      <label for="gender">성별</label>
+      <select name="gender" id="gender">
+        <option value="N" selected>성별</option>
+        <option value="M">남자</option>
+        <option value="G">여자</option>
+      </select>
+      <button type="button" onclick="join()">가입하기</button>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function join() {
+        var userId = $('#userId').val().trim();   // *** 메소드 체이닝 : 체인처럼 연결이 된 상태라서 붙여진 이름
+                                                  // 체이닝이 되려면, 리턴값이 있어야 됨
+                                                  // 리턴을 해야 그 다음 메소드를 실행시킬수 있음
+        userId.trim();  // trim은 공백이 있을 때
+                        // trim은 문자열 함수이고, JS의 내장함수임.
+        if (userId == '') {  // 아무것도 적지 않았을 때
+          alert('아이디를 입력해 주세요');
+          $('userId').focus();
+          return false;
+        }
+        if (userId.length >= 20) {
+          alert('아이디는 20글자 아래로 입력해 주세요');
+          $('#userId').focus();   // 입력한 곳에 포커스가 맞춰짐
+          $('#userId').val("");   // 입력한 글씨가 사라짐
+          return false;
+        }
+
+
+
+        // 1. 비밀번호와 비밀번호재확인이 공백 입력 불가능하게
+        // 2. 비밀번호와 비밀번호재확인 값이 동일하게
+        //    틀리면 "비밀번호가 다릅니다"
+        var password = $('#password').val().trim();
+        var rePassword = $('#rePassword').val().trim();
+
+        if (password == '') {
+          alert('비밀번호를 입력해 주세요');
+          $('#password').focus();
+          return false;
+        }
+
+        if (rePassword == '') {
+          alert('비밀번호를 입력해 주세요');
+          $('#rePassword').focus();
+          return false;
+        }
+
+        if (password !== rePassword) {
+          alert('비밀번호가 다릅니다');
+          $('#password').focus();
+          $('#password').val("");
+          $('#rePassword').val("");
+          return false;
+        }
+
+
+
+        // 한글 이름 말고는 다 걸러내는.
+        // 정규표현식 함수
+        function checkName(name) {
+          var regex = /^[가-힣]+$/;    // ^ = 문자를 의미 함
+                                       // 정규표현식 (한글이름만 찾기)
+          return regex.test(name);   // 정규표현식 체크
+        }
+
+        var userName = $('#userName').val().trim();
+        if (checkName(userName)) {
+          console.log("한글이름");
+        }
+        else {
+          alert("한글 이름을 입력해주세요.");
+          $('#userName').focus();
+          $('#userName').val("");
+        }
+
+
+
+        // 생년월일에 숫자만 올 수 있는 정규표현식을 찾아서 function 만들기
+        function checkNumber(num) {
+          var regex = /[0-9]/;
+          return regex.test(num);
+        }
+
+        var year = $('#yy').val().trim();
+        var day = $('#dd').val().trim();
+        if(checkNumber(year) || checkNumber(day)){
+          console.log("생일");
+        }
+        if (!checkNumber(year) || !checkNumber(day)) {
+          alert('숫자만 입력해주세요');
+          return false;
+        }
+
+
+
+        // 성별 체크
+        var gender = $('#gender option:selected').val();
+        console.log(gender);
+        if (gender == 'N') {
+          alert('성별을 선택해주세요.');
+          $('#gender').focus();
+          return false;
+        }
+
+
+
+        // 최종
+        var isResult = confirm('회원가입을 하시겠습니까?');
+        if (isResult) {
+          console.log('회원가입 성공');
+        }
+
+      }
+    </script>
+  </body>
+</html>
