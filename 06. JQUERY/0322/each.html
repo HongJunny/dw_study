@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="conteiner">
+        <ul>
+            <li>멤버 소개</li>
+            <li>오시는 길</li>
+            <li>회사 소개</li>
+            <li>서비스</li>
+        </ul>
+    </div>
+</body>
+<script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+</script>
+<script>
+    $(function () {
+        $('.conteiner ul li').each(function(index,item) {   // each = for문과 같음 (반복문)
+            // index = 배열 값,  item = 해당 배열에 있는 내용
+            if (index == 1) {
+                console.log('hello world');
+            }
+            console.log(index);
+            console.log($(item).text());  // item은 this(나 자신)을 의미 함
+            // "this(나 자신, 해당 요소)"와 "super(부모 요소)" 검색해보기
+        });
+    });
+</script>
+</html>
