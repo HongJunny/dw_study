@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="conteiner">
+        <ul>
+            <li class="boxing" id="boxing">복싱</li>
+            <li><p>수영</p></li>
+            <li>유도</li>
+            <li>헬스</li>
+            <li>레슬링</li>
+        </ul>
+        <ul></ul>
+        <div>사격</div>
+    </div>
+    <div class="text-wrapper">
+        <input id="userName" type="text" value="박카스" />
+        <input id="userEmail" type="text" value="박카스@gmail.com" />
+    </div>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        var conteiner = $('.conteiner');
+        var conteinerChildren = $('.conteiner').children();
+
+        // 아래 3개는 다 같은 결과.
+        console.log(conteiner.children());
+        console.log(conteinerChildren);
+        console.log($('.conteiner').children());
+
+
+        console.log('-------------------------');
+
+
+        // 첫번째 자식인 ul의 자식인 li에 입력된 값 찾기
+        console.log(conteinerChildren[0].children[0].innerHTML);
+        console.log(conteinerChildren[0].children[1].innerHTML);
+        console.log(conteinerChildren[0].children[2].innerHTML);
+        console.log(conteinerChildren[0].children[3].innerHTML);
+        console.log(conteinerChildren[0].children[4].innerHTML);
+
+
+
+        console.log('-------------------------');
+
+
+
+        // 세번째 자식에 입력된 값 찾기
+        console.log(conteinerChildren[2].innerHTML);
+
+
+
+        console.log('-------------------------');
+
+
+
+        // 첫번째 자식인 ul의 자식인 li의 id 값 찾기
+        console.log(conteinerChildren[0].children[0].id);
+
+
+
+        console.log('-------------------------');
+
+
+
+        // li에 입력된 값을 for문으로 찾기
+        var len = conteinerChildren[0].children.length;
+        for (var i=0; i<len; i++) {
+            // innerHTML : html 태그와 text를 보여줌
+            // innerText : text만 보여줌
+            var innerText = conteinerChildren[0].children[i].innerText;
+            console.log(innerText);
+        }
+
+        
+
+        console.log('-------------------------');
+
+
+
+        // for문 이용해서 "input id"와 "value"를 console.log 하기
+        var textWrapper = $('.text-wrapper').children();
+        for (var i=0; i<textWrapper.length; i++) {
+            console.log(textWrapper[i].id);  // id 찾기
+            console.log(textWrapper[i].value);  // value 찾기
+        }
+        
+    </script>
+</body>
+</html>
