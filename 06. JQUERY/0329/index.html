@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div class="forms">
+    <input id="name" type="text" value="홍길동" />
+    <input id="hobby" type="text" value="등산" />
+</div>
+<body>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        var name = $('#name').val();
+        var hobby = $('#hobby').val();
+
+        var jsonData = {};
+        jsonData.name = 'ds';
+        jsonData[name] = '교사';
+        console.log(jsonData);
+
+
+        var jsonData1 = {};
+        var formsChildren = $('.forms').children();
+        for (var i=0; i<formsChildren.length; i++) {
+            var inputId = formsChildren[i].id;
+            console.log(inputId);
+            jsonData1[inputId] = $('#'+inputId).val();
+        }
+        console.log(jsonData1);
+        submitServer(jsonData);
+
+        function submitServer(jsonData1) {
+            // 서버에 보내는 로직 구현 ( with 제이쿼리 )
+            // param 변수를 서버에 보내자 !
+        }
+    </script>
+</body>
+</html>
