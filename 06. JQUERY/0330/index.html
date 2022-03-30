@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="forms">
+        <div class="input-box">
+            <input id="email" type="text" />
+        </div>
+        <div class="input-box">
+            <input id="name" type="text" />
+        </div>
+        <div class="input-box">
+            <input id="phone" type="text" />
+        </div>
+        <div class="input-box">
+            <input id="addr" type="text" />
+        </div>
+        <div class="input-box">
+            <input id="age" type="text" />
+        </div>
+        <button class="join" type="button">회원 가입</button>
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        
+        var formsChildren = $('.forms').children();
+        console.log(formsChildren);
+
+        var inputBoxChildren = $('.input-box').children();
+        console.log(inputBoxChildren);
+
+        var cnt = 0;
+        $('.join').click(function () {
+            var jsonData = {};
+            for (var i =0; i<inputBoxChildren.length; i++) {
+                if(cnt >= 3) {
+                    alert('3회 이상 잘못 입력 했습니다. 내일 다시 회원가입 하세요.');
+                    return false;
+                }
+            var elementId = inputBoxChildren[i].id;
+            var elementValue = $('#'+elementId).val().trim();
+                if (elementValue === '') {
+                    alert('빈칸이 있어요!');
+                    $('#'+elementId).focus();
+                    ++cnt;
+                    return false;
+                }
+                if (elementId === 'email' && !doCheckEmail(elementValue)) {
+                    alert('이메일 형식이 올바르지 않습니다.');
+                    $('#'+elementId).focus();
+                    ++cnt;
+                    return false;
+                }
+                jsonData[elementId] = elementValue;
+            }
+        });
+
+        function doCheckEmail(email) {
+            var regEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+            var isEmail = regEmail.test(email);
+            return isEmail;
+        }
+    </script>
+</body>
+</html>
