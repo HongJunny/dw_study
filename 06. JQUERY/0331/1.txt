@@ -1,0 +1,55 @@
+
+
+* HTTP( Hyper Text Transfer Protocol ) = Hyper( 초월, 뛰어넘는 ) Text를 전송 하겠다
+
+
+-----------------------------------------------------------------
+
+
+* HTTP의 메소드( 기능 ) - Get, Post, Delete, Patch
+  - Get : select ( 데이터 조회 )
+  - Post : insert ( 데이터 생성 )
+  - Delete : delete ( 데이터 삭제 )
+  - Patch : update ( 데이터 일부분 수정 )
+
+
+* HTTP 메소드를 최종 지휘하는 것이 JQUERY
+
+
+-----------------------------------------------------------------
+
+
+* HTTPS = HTTP + S( 보안 )
+  HTTP가 보안에 취약해서, 보안 강화를 해 준 것임.
+
+
+-----------------------------------------------------------------
+
+
+* API( Application Programming Interface ) = URL ( Json을 최종적으로 받을 목적지 )
+  - Application = 프로그램 ( 소프트웨어 )
+  - Interface = 상호작용
+
+
+* 문법
+      $.ajax( {   // json으로 정의 함
+	url : API 주소   // 목적지
+	type : HTTP Method   // 'Get, Post, Delete, Patch' 중에서 한개를 선택해서 쓰면 됨
+	dataType : json   // 서버에서 응답이 온 데이터를 json으로 받겠다
+	// dataType : text   // 가끔 text도 사용 함
+	success : function(response) {  // HTML에서 요청이 성공 하면, 익명함수 파라미터에 값을 대입
+	},
+	error : function(request, status, error) {   // HTML에서 요청이 실패 하면, error 실행
+	}
+      } );
+
+
+-----------------------------------------------------------------
+
+
+* HTTP ERROR CODE
+  - 404 : 없는 페이지
+  - 500 : 서버 내부 결함( 에러 )
+  - 403 : 있는 주소인데, 나한테 권한이 없어서 요청을 못함
+
+

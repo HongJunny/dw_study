@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        name : 영화제목
+        rank : 관객 수 순위
+        createdAt : 개봉 날짜
+        salesRevenue : 판매액
+        attendance : 관객수 */
+      const movies = [
+        {
+          name: '명량',
+          rank: 1,
+          createdAt: '2014-07-30',
+          salesRevenue: 135748398910,
+          attendance: 17613682,
+        },
+        {
+          name: '극한직업',
+          rank: 2,
+          createdAt: '2019-01-23',
+          salesRevenue: 139647979516,
+          attendance: 16264944,
+        },
+        {
+          name: '신과함께-죄와 벌',
+          rank: 3,
+          createdAt: '2014-07-30',
+          salesRevenue: 135748398910,
+          attendance: 17613682,
+        },
+        {
+          name: '국제시장',
+          rank: 4,
+          createdAt: '2014-07-30',
+          salesRevenue: 110913469630,
+          attendance: 14257115,
+        },
+        {
+          name: '어벤져스: 엔드게임',
+          rank: 5,
+          createdAt: '2019-04-24',
+          salesRevenue: 122182694160,
+          attendance: 13934592,
+        },
+      ];
+      /*
+    우리나라에서 개봉한 역대 관객수 TOP5영화 데이터를 조회했다고 가정.
+      */
+      console.log(movies);
+
+    /*
+    문제 1번.
+        영화 이름, 개봉날짜, 순위만 출력하시오.
+    */
+        console.log('■■■■■■■■■■■ 1 번 문 제 ■■■■■■■■■■■');
+        for (var i=0; i<movies.length; i++) {
+          console.log(movies[i].name);  // 이름
+          console.log(movies[i].createdAt);  // 개봉날짜
+          console.log(movies[i].rank);  // 순위
+          console.log('----------------------');
+        }
+        console.log('■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■');
+        console.log(' ');
+        console.log(' ');
+        console.log(' ');
+
+
+    /*
+    문제 2번.
+        영화 명량과 어벤져스의 판매액 합산을 구하시오.
+    */
+        console.log('■■■■■■■■■■■ 2 번 문 제 ■■■■■■■■■■■');
+        console.log('----------------------');
+        var mov1 = 0;
+        var mov2 = 0;
+        var sum = 0;
+        for (var i=0; i<movies.length; i++) {
+          if (movies[i].name === '명량') {
+            mov1 = movies[i].salesRevenue;
+          }
+          if (movies[i].name === '어벤져스: 엔드게임') {
+            mov2 = movies[i].salesRevenue;
+          }
+        }
+        sum = mov1 + mov2;
+        console.log('명량과 어벤져스의 판매액 : '+sum);
+        console.log('----------------------');
+        console.log('■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■');
+        console.log(' ');
+        console.log(' ');
+        console.log(' ');
+
+
+    /*
+    문제 3번.
+        관객수가 15000000넘은 영화의 이름과 개봉날짜 판매액을 출력하시오.
+    */
+        console.log('■■■■■■■■■■■ 3 번 문 제 ■■■■■■■■■■■');
+        console.log('----------------------');
+        for (var i=0; i<movies.length; i++) {
+          if (movies[i].attendance > 15000000) {
+            console.log(movies[i].name);  // 이름
+            console.log(movies[i].createdAt);  // 개봉날짜
+            console.log(movies[i].salesRevenue);  // 판매액
+            console.log('----------------------');
+          }
+        }
+        console.log('■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■');
+        console.log(' ');
+        console.log(' ');
+        console.log(' ');
+
+
+    /*
+    문제 4번.    
+        1위 영화부터 5위 영화 판매액 평균을 구하시오.
+    */
+        console.log('■■■■■■■■■■■ 4 번 문 제 ■■■■■■■■■■■');
+        console.log('----------------------');
+        var sum1 = 0;
+        for (var i=0; i<movies.length; i++) {
+          sum1 += movies[i].salesRevenue;
+        }
+        console.log('1위 영화부터 5위 영화 판매액 평균 : '+sum1/movies.length);
+        console.log('----------------------');
+        console.log('■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■');
+        console.log(' ');
+        console.log(' ');
+        console.log(' ');
+
+
+
+    /*
+    문제 5번.
+        개봉날짜가 가장 최근인 영화의 이름과 개봉일 순위를 구하시오.
+    */
+        console.log('■■■■■■■■■■■ 5 번 문 제 ■■■■■■■■■■■');
+        console.log('----------------------');
+        var time = 0;
+        var max = 0;
+        var movieName = 0;
+        var movieRank = 0;
+        var movieCreateAt = 0;
+        for (var i=0; i<movies.length; i++) {
+          time = movies[i].createdAt;
+          time = new Date(time);
+          if ( max < time.getTime() ) {
+            max = time.getTime();
+            movieName = movies[i].name;
+            movieRank = movies[i].rank;
+            movieCreateAt = movies[i].createdAt;
+          }
+        }
+        console.log('개봉날짜가 가장 최근인 영화의 이름 : '+movieName);
+        console.log('개봉날짜가 가장 최근인 영화의 개봉일 : '+movieCreateAt);
+        console.log('개봉날짜가 가장 최근인 영화의 개봉일 순위 : '+movieRank);
+        console.log('■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■');
+
+
+    </script>
+  </body>
+</html>

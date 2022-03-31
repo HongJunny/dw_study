@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="my-github">
+        <h3 class="name"></h3>
+        <p class="follewers"></p>
+        <p class="following"></p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>visibility</th>
+                <th>created_at</th>
+            </tr>
+        </thead>
+        <tbody id="list">
+            <!-- <tr>
+                <td>275516967</td>
+                <td>33-js-concepts</td>
+                <td>public</td>
+                <td>dd</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        // 전송하는 방법 : 동기 전송, 비동기 전송
+        // ajax default value : 비동기 전송 
+        $.ajax({  // ajax 선언
+            url : "https://api.github.com/users/HongJunny",   // 목적지 주소
+            type : "GET",  // 데이터 조회 (select)
+            dataType : 'json',   // API 서버에서 오는 데이터 타입을 정의
+            success : function(data) {   // 서버 요청에 성공 하면!
+                console.log(data);   // 모든 데이터 출력
+                console.log('팔로워 수 : '+data.followers);   // 팔로워 출력
+                console.log('팔로잉 수 : '+data.following);   // 팔로잉 출력
+
+                $('.follewers').append(data.followers);
+                $('.following').append(data.following);
+                $('.name').append(data.name);
+            },
+            error : function(request, status, error) {   // 서버 요청에 실패 하면!
+                console.log(request);
+                // '404'는 없는 페이지, '500'은 서버 내부 결함(에러), '403'은 있는 주소인데 나한테 권한이 없어서 요청을 못함
+                if(request.status == 404) {
+                    alert('없는 주소입니다.');
+                }
+                if(request.status == 403) {
+                    alert('권한이 없습니다.');
+                }
+                if(request.status == 500) {
+                    alert('서버 에러가 생겼습니다.');
+                }
+            }
+        });
+
+
+        $.ajax({
+            url : "https://api.github.com/users/HongJunny/repos",
+            type : "GET",
+            dataType : 'json',
+            success : function(data) {
+                console.log(data);
+                for (var i=0; i<data.length; i++) {
+                    var html = 
+                        '<tr><td>'+
+                        data[i].id+
+                        '</td><td>'+
+                        data[i].name+
+                        '</td><td>'+
+                        data[i].visibility+
+                        '</td><td>'+
+                        data[i].created_at+
+                        '</td></tr>'
+                    $('#list').append(html);
+                    console.log(data[i].id);
+                }
+            },
+            error : function(request, status, error) {
+                console.log(error);
+            }
+        })
+    </script>
+</body>
+</html>
