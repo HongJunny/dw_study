@@ -2,9 +2,10 @@
 // 버블정렬을 이용하여 오름차순으로 정렬하고 총 몇회전 했는지 알아내시오.
 let array = [1, 10, 4, 3, 5];
 let count = 0; // 총 몇회전 했는지 알아내는 변수
-let swap = 0;  // array 값을 임시로 담아두는 변수
+let temp = 0;  // array 값을 임시로 담아두는 변수
 // let = 변수 이름 중복이 안됨. 선언된 변수 이름이 같으면 오류.
 // var = JS에서는 변수 이름 중복이 허용 됨.
+let len = array.length;
 
 
 for (var i=len; i>0; i--) {
