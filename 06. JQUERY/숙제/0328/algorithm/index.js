@@ -7,12 +7,12 @@ let swap = 0;  // array 값을 임시로 담아두는 변수
 // var = JS에서는 변수 이름 중복이 허용 됨.
 
 
-for (var i=0; i<array.length; i++) {
-    for (var j=0; j<array.length; j++) {
+for (var i=len; i>0; i--) {
+    for (var j=0; j<(i-1); j++) {
         if (array[j] > array[j+1]) {
-            swap = array[j];
+            temp = array[j];
             array[j] = array[j+1];
-            array[j+1] = swap;
+            array[j+1] = temp;
             ++count;
         }
     }
