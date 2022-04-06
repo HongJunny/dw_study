@@ -1,20 +1,20 @@
-package »ó¼Ó;
-
+package ìƒì†;
+ 
 class Student_A {
-	public void °øºÎÇÏ´Ù() {	
-		System.out.println("JAVA °øºÎÁß");
+	public void ê³µë¶€í•˜ë‹¤() {	
+		System.out.println("JAVA ê³µë¶€ì¤‘");
 	}
 }
 
 class Student_B {
-public void °øºÎÇÏ´Ù() {	
-		System.out.println("SQL °øºÎÁß");
+public void ê³µë¶€í•˜ë‹¤() {	
+		System.out.println("SQL ê³µë¶€ì¤‘");
 	}
 }
 
 class Student_C {
-public void °øºÎÇÏ´Ù() {
-	System.out.println("HTML °øºÎÁß");
+public void ê³µë¶€í•˜ë‹¤() {
+	System.out.println("HTML ê³µë¶€ì¤‘");
 	}
 }
 
@@ -26,9 +26,9 @@ public class School {
 		Student_B B = new Student_B();
 		Student_C C = new Student_C();
 		
-		A.°øºÎÇÏ´Ù();
-		B.°øºÎÇÏ´Ù();
-		C.°øºÎÇÏ´Ù();
+		A.ê³µë¶€í•˜ë‹¤();
+		B.ê³µë¶€í•˜ë‹¤();
+		C.ê³µë¶€í•˜ë‹¤();
 		
 		
 	}
