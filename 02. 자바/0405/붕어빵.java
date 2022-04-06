@@ -1,11 +1,11 @@
-package ���;
+package »ó¼Ó;
 
-public class �ؾ {
-	
+public class ºØ¾î»§ {
+	 
 	String fishBread;
 	int count;
 
-	public �ؾ(String fishBread, int count) {
+	public ºØ¾î»§(String fishBread, int count) {
 		this.fishBread = fishBread;
 		this.count = count;
 	}
