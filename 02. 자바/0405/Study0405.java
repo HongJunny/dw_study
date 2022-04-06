@@ -1,23 +1,23 @@
-package »ó¼Ó;
+package ìƒì†;
 
-class Pizza {   // Å¬·¡½º ÆÄÀÏÀ» ¸¸µé¸é µðÆúÆ® »ý¼ºÀÚ°¡ »ý¼º µÊ
+class Pizza {   // í´ëž˜ìŠ¤ íŒŒì¼ì„ ë§Œë“¤ë©´ ë””í´íŠ¸ ìƒì„±ìžê°€ ìƒì„± ë¨
+	 
+	int money;  // í•„ë“œë³€ìˆ˜ëŠ” ë””í´íŠ¸ë¡œ ê°’ì´ ì´ˆê¸°í™” ëœ ìƒíƒœ
+				// intëŠ” 0, Stringì€ null
 	
-	int money;  // ÇÊµåº¯¼ö´Â µðÆúÆ®·Î °ªÀÌ ÃÊ±âÈ­ µÈ »óÅÂ
-				// int´Â 0, StringÀº null
-	
-	// ÀÚ¹Ù¿¡¼­´Â È£Ãâ ÇÒ ¶§, ÃÊ±âÈ­°¡ ½ÃÀÛ µÊ.
+	// ìžë°”ì—ì„œëŠ” í˜¸ì¶œ í•  ë•Œ, ì´ˆê¸°í™”ê°€ ì‹œìž‘ ë¨.
 	
 	public int getMoney() {
 		
 		return 0;
 	}
 	
-	public Pizza() {  //  = »ý¼ºÀÚ
-	//  '»ý¼ºÀÚ'¿Í 'ÀÏ¹ÝÇÔ¼ö(¸Þ¼Òµå)'ÀÇ Â÷ÀÌ - ¸éÁ¢ Áú¹®¿¡ ³ª¿Ã¼öµµ ÀÖÀ½
-	//     »ý¼ºÀÚ´Â ¸®ÅÏÅ¸ÀÔÀ» Á¤ÀÇ ÇÏÁö ¾Ê¾Æµµ µÊ
-	//     »ý¼ºÀÚ´Â ¸®ÅÏÀÌ ¸ñÀûÀÌ ¾Æ´Ï°í, ÃÊ±âÈ­°¡ ¸ñÀûÀÓ
+	public Pizza() {  //  = ìƒì„±ìž
+	//  'ìƒì„±ìž'ì™€ 'ì¼ë°˜í•¨ìˆ˜(ë©”ì†Œë“œ)'ì˜ ì°¨ì´ - ë©´ì ‘ ì§ˆë¬¸ì— ë‚˜ì˜¬ìˆ˜ë„ ìžˆìŒ
+	//     ìƒì„±ìžëŠ” ë¦¬í„´íƒ€ìž…ì„ ì •ì˜ í•˜ì§€ ì•Šì•„ë„ ë¨
+	//     ìƒì„±ìžëŠ” ë¦¬í„´ì´ ëª©ì ì´ ì•„ë‹ˆê³ , ì´ˆê¸°í™”ê°€ ëª©ì ìž„
 		
-		this.money = 10;   // Àü¿ªº¯¼ö¸¦ ºÒ·¯¿Ã¶§´Â ¾Õ¿¡ this¸¦ ºÙÀÓ
+		this.money = 10;   // ì „ì—­ë³€ìˆ˜ë¥¼ ë¶ˆëŸ¬ì˜¬ë•ŒëŠ” ì•žì— thisë¥¼ ë¶™ìž„
 		
 	}
 	
@@ -27,12 +27,12 @@ public class Study0405 {
 
 	public static void main(String[] args) {
 		
-		Pizza p = new Pizza();   // °´Ã¼ÁöÇâ¾ð¾î Æ¯Â¡
-		// Å¬·¡½ºµµ µ¥ÀÌÅÍ Å¸ÀÔ
-		// () = »ý¼ºÀÚ(¸Þ¼Òµå) È£Ãâ
+		Pizza p = new Pizza();   // ê°ì²´ì§€í–¥ì–¸ì–´ íŠ¹ì§•
+		// í´ëž˜ìŠ¤ë„ ë°ì´í„° íƒ€ìž…
+		// () = ìƒì„±ìž(ë©”ì†Œë“œ) í˜¸ì¶œ
 		
-		// ¿©±â¼­ ¾²´Â this´Â "Study0405"
-		// ÀÚ±â ÀÚ½ÅÀÇ Å¬·¡½º¸¦ ÀÇ¹Ì ÇÔ
+		// ì—¬ê¸°ì„œ ì“°ëŠ” thisëŠ” "Study0405"
+		// ìžê¸° ìžì‹ ì˜ í´ëž˜ìŠ¤ë¥¼ ì˜ë¯¸ í•¨
 		
 	}
 
