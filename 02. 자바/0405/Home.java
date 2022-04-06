@@ -1,13 +1,13 @@
-package »ó¼Ó;
+package ìƒì†;
 
 public class Home {
-
+ 
 	public static void main(String[] args) {
 
 		Dw dw = new Dw();
 		
-		dw.setName("È«ÁØÈ£");
-		dw.setClassName("À¥°³¹ß");
+		dw.setName("í™ì¤€í˜¸");
+		dw.setClassName("ì›¹ê°œë°œ");
 		dw.setStudentCount(13);
 		
 		System.out.println(dw.getName());
@@ -16,13 +16,13 @@ public class Home {
 		
 		System.out.println(" ");
 		
-		Dw dw01 = new Dw("È«±æµ¿", "¹İÀÀÇü°³¹ß", 13);
-		// ÀÎ½ºÅÏ½ºÈ­ ÇÏ´Ù (ÆÄÀÏÀ» ºÒ·¯¿À´Ù)
+		Dw dw01 = new Dw("í™ê¸¸ë™", "ë°˜ì‘í˜•ê°œë°œ", 13);
+		// ì¸ìŠ¤í„´ìŠ¤í™” í•˜ë‹¤ (íŒŒì¼ì„ ë¶ˆëŸ¬ì˜¤ë‹¤)
 		System.out.println(dw01.name);
 		System.out.println(dw01.className);
 		System.out.println(dw01.studentCount);
 
-		// ÀÚÁÖ »ç¿ëÇÏ´Â°ÍÀÓ. Áß¿äÇÔ.
+		// ìì£¼ ì‚¬ìš©í•˜ëŠ”ê²ƒì„. ì¤‘ìš”í•¨.
 		Dw dw02 = null;
 		if(dw02 == null) {
 			dw02 = new Dw();
