@@ -1,17 +1,17 @@
-package ���;
+package 상속;
 
-public class �ؾ��� {
-
+public class 붕어빵장사 {
+ 
 	public static void main(String[] args) {
 
-		�ؾ �Ϻؾ = new �ؾ("��", 10);
-		System.out.println(�Ϻؾ.fishBread+"�ؾ "+�Ϻؾ.count+"��");
+		붕어빵 팥붕어빵 = new 붕어빵("팥", 10);
+		System.out.println(팥붕어빵.fishBread+"붕어빵 "+팥붕어빵.count+"개");
 		
-		�ؾ ��ũ���ؾ = new �ؾ("��ũ��", 20);
-		System.out.println(��ũ���ؾ.fishBread+"�ؾ "+��ũ���ؾ.count+"��");
+		붕어빵 슈크림붕어빵 = new 붕어빵("슈크림", 20);
+		System.out.println(슈크림붕어빵.fishBread+"붕어빵 "+슈크림붕어빵.count+"개");
 		
-		�ؾ ���ںؾ = new �ؾ("����", 30);
-		System.out.println(���ںؾ.fishBread+"�ؾ "+���ںؾ.count+"��");
+		붕어빵 피자붕어빵 = new 붕어빵("피자", 30);
+		System.out.println(피자붕어빵.fishBread+"붕어빵 "+피자붕어빵.count+"개");
 		
 	}
 
