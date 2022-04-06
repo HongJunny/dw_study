@@ -1,26 +1,26 @@
-package »ó¼Ó;
+package ìƒì†;
 
 public class Dw {
 
-	String name;  // ÇĞ»ı ÀÌ¸§
-	String className;  // °úÁ¤ ÀÌ¸§
-	int studentCount;  // ÇĞ»ı ¼ö
+	String name;  // í•™ìƒ ì´ë¦„
+	String className;  // ê³¼ì • ì´ë¦„ 
+	int studentCount;  // í•™ìƒ ìˆ˜
 	
 	public Dw() {
-		// ¿À¹ö·Îµù¶§¹®¿¡ ¸Ş¼Òµå ÀÌ¸§Àº µ¿ÀÏÇØµµ µÊ.
-		// ÆÄ¶ó¹ÌÅÍ °ªÀÌ ´Ş¶ó¾ß, µ¿ÀÏÇÑ ¸Ş¼Òµå ÀÌ¸§À¸·Î »ç¿ëÀÌ °¡´É.
+		// ì˜¤ë²„ë¡œë”©ë•Œë¬¸ì— ë©”ì†Œë“œ ì´ë¦„ì€ ë™ì¼í•´ë„ ë¨.
+		// íŒŒë¼ë¯¸í„° ê°’ì´ ë‹¬ë¼ì•¼, ë™ì¼í•œ ë©”ì†Œë“œ ì´ë¦„ìœ¼ë¡œ ì‚¬ìš©ì´ ê°€ëŠ¥.
 	}
 	
 	public Dw(String name, String className, int studentCount) {
-		// »ı¼ºÀÚ ÀÌ¸§Àº Å¬·¡½º ÀÌ¸§°ú µ¿ÀÏÇØ¾ß µÊ
-		// return typeÀÌ ¾ø´Ù.
+		// ìƒì„±ì ì´ë¦„ì€ í´ë˜ìŠ¤ ì´ë¦„ê³¼ ë™ì¼í•´ì•¼ ë¨
+		// return typeì´ ì—†ë‹¤.
 		this.name = name;
 		this.className = className;
 		this.studentCount = studentCount;
 	}
 	
-	// 1. »ı¼ºÀÚ¿¡ ÆÄ¶ó¹ÌÅÍ ¾øÀÌ ÇÊµå º¯¼ö ÃÊ±âÈ­
-	// getter, setter »ç¿ë
+	// 1. ìƒì„±ìì— íŒŒë¼ë¯¸í„° ì—†ì´ í•„ë“œ ë³€ìˆ˜ ì´ˆê¸°í™”
+	// getter, setter ì‚¬ìš©
 
 	public String getName() {
 		return name;
