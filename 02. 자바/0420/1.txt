@@ -61,8 +61,8 @@
   인터페이스 안에 있는 모든 메소드는 추상메소드다 - 추상메소드는 public으로 사용 해야 됨
 
   A 프로젝트 : 과장1 - 테이블 설계, 인터페이스 설계, 클라이언트 요구사항 정리, 코드 구현(핵심 로직)
-                  대리1 - 소스 통합 & 배포
-                  사원2 - 코드 구현
+              대리1 - 소스 통합 & 배포
+              사원2 - 코드 구현
 
 
 * 인터페이스와 클래스의 차이
@@ -83,19 +83,19 @@
 
 * 누가 어떤 메소드를 만들었는지 추적 해야 됨
   기록 남기는 방법 : 위쪽 메뉴중에서 '윈도우' -> Preferences -> 왼쪽 메뉴에서 'JAVA' 
-                               -> JAVA 하위메뉴에서 'Code Style' -> Code Style 하위메뉴에서 'Code Templates' 
-                               -> 가운데 메뉴에서 'Comments' -> 하위메뉴에서 'Methods' 선택 -> 아래에 적힌 그대로 수정
-				/**
-				 * ${tags}
-				 * @date : ${date}
-				 * @author : Junho Hong
-				 */
-                          가운데 메뉴에서 'Comments' -> 하위메뉴에서 'Types' 선택 -> 아래에 적힌 그대로 수정
-				/**
-				 * @author Junho Hong
-				 * @date ${date}
-				 * @comment : 
-				 */
-                          'Apply and Close' 클릭
+                        -> JAVA 하위메뉴에서 'Code Style' -> Code Style 하위메뉴에서 'Code Templates' 
+                        -> 가운데 메뉴에서 'Comments' -> 하위메뉴에서 'Methods' 선택 -> 아래에 적힌 그대로 수정
+				     /**
+				      * ${tags}
+				      * @date : ${date}
+				      * @author : Junho Hong
+				      */
+                    가운데 메뉴에서 'Comments' -> 하위메뉴에서 'Types' 선택 -> 아래에 적힌 그대로 수정
+				     /**
+				      * @author Junho Hong
+				      * @date ${date}
+				      * @comment : 
+				      */
+                    'Apply and Close' 클릭
   단축키 : Alt + Shift + j
 
