@@ -16,9 +16,14 @@ INSERT INTO devices(device_uuid, battery, firmware_ver, is_use) VALUES('20130099
 
 
 -- 4. 2022-04-11 이후 탈착 이벤트가 1건 이상 발생된 UUID, 펌웨어 버전 조회.
-
-
-
+select d.device_uuid as 'device_uuid',
+d.firmware_ver as '펌웨어 버전'
+from car_event_log care left join car_information carin
+on care.car_number = carin.car_number 
+left join devices d
+on carin.device_uuid = d.device_uuid 
+where care.create_at > '2022-04-10'
+and care.event_type = 3
 
 
 -- 5. 2022-04-11 ~ 2022-04-13 일별 이벤트 카운트 조회.
