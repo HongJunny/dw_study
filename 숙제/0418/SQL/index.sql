@@ -36,9 +36,17 @@ group by date_format(create_at, '%Y-%m-%d')
 
 
 -- 6. 전체 디바이스 수, 차량에 부착된 디바이스 수, 차량에 부착하지 않은 디바이스 수 조회.
-
-
-
+select count(carin.device_uuid) as '전체 디바이스 수',
+(select count(carin.device_uuid)
+from car_information carin left join car_event_log care
+on carin.car_number = care.car_number 
+where care.event_type != 3) as '차량에 부착된 디바이스 수',
+(select count(carin.device_uuid)
+from car_information carin left join car_event_log care
+on carin.car_number = care.car_number 
+where care.event_type = 3) as '차량에 부착하지 않은 디바이스 수'
+from car_information carin left join car_event_log care
+on carin.car_number = care.car_number
 
 
 -- 7. 차량번호 '359서 9096'의 2022-04-11 ~ 2022-04-13일까지 이벤트별 카운트 조회
