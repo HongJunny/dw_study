@@ -72,6 +72,6 @@ i를 j로 표현하면
 			System.out.println(arr);
 		}
 
----
+
 	
 참조 https://github.com/YYJ0311/DW_memo/blob/master/%EC%88%99%EC%A0%9C/0425/algorithm/%ED%92%80%EC%9D%B4.java
