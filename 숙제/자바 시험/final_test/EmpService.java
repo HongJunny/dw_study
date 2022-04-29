@@ -6,17 +6,18 @@ public class EmpService implements EmpServiceImpl{
 
 	@Override
 	public List<EmpVO> getEmpList(List<EmpVO> list) {
-		// 1¹ø. ÀüÃ¼ »ç¿ø 200´Ş·¯ ±Ş¿© ÀÎ»óÇÏ°í »ç¿ø ¸®½ºÆ®¸¦ ¸®ÅÏ ÇÏ½Ã¿À. 
+		// 1ë²ˆ. ì „ì²´ ì‚¬ì› 200ë‹¬ëŸ¬ ê¸‰ì—¬ ì¸ìƒí•˜ê³  ì‚¬ì› ë¦¬ìŠ¤íŠ¸ë¥¼ ë¦¬í„´ í•˜ì‹œì˜¤. 
 		for (EmpVO e : list) {
 			int bonusSal = e.getSal() + EmpCode.SPECIAL_BONUS;
-			System.out.println("»ç¿ø¹øÈ£ : "+e.getEmpno()+", »ç¿øÀÌ¸§ : "+e.getEname()+", »ç¿ø±Ş¿© : "+bonusSal+", »ç¿øºÎ¼­ : "+e.getList());
+			e.setSal(bonusSal);
+			System.out.println("ì‚¬ì›ë²ˆí˜¸ : "+e.getEmpno()+", ì‚¬ì›ì´ë¦„ : "+e.getEname()+", ì‚¬ì›ê¸‰ì—¬ : "+e.getSal()+", ì‚¬ì›ë¶€ì„œ : "+e.getList());
 		}
 		return list;
 	}
 
 	@Override
 	public EmpVO getEmp(List<EmpVO> list) {
-		// 2¹ø. ±Ş¿©°¡ °¡Àå ³ôÀº »ç¿øÀ» ¸®ÅÏ ÇÏ½Ã¿À. (´Ü, ±Ş¿© Áßº¹ÀÌ ¾ø´Ù°í °¡Á¤)
+		// 2ë²ˆ. ê¸‰ì—¬ê°€ ê°€ì¥ ë†’ì€ ì‚¬ì›ì„ ë¦¬í„´ í•˜ì‹œì˜¤. (ë‹¨, ê¸‰ì—¬ ì¤‘ë³µì´ ì—†ë‹¤ê³  ê°€ì •)
 		int maxSal = 0;
 		int index = 0;
 		for (int i=0; i<list.size(); i++) {
@@ -26,28 +27,35 @@ public class EmpService implements EmpServiceImpl{
 				index = i;
 			}
 		}
-		System.out.println("»ç¿ø¹øÈ£ : "+list.get(index).getEmpno()+", »ç¿øÀÌ¸§ : "+list.get(index).getEname()+", »ç¿ø±Ş¿© : "+list.get(index).getSal()+", »ç¿øºÎ¼­ : "+list.get(index).getList());
+		System.out.println("ì‚¬ì›ë²ˆí˜¸ : "+list.get(index).getEmpno()+", ì‚¬ì›ì´ë¦„ : "+list.get(index).getEname()+", ì‚¬ì›ê¸‰ì—¬ : "+list.get(index).getSal()+", ì‚¬ì›ë¶€ì„œ : "+list.get(index).getList());
 		return null;
 	}
 
 	@Override
 	public int getCount(List<EmpVO> list, int sal) {
-		// 3¹ø. »ç¿ø Áß ±Ş¿©¸¦ 300ÀÌÇÏ·Î ¹Ş°í ÀÖ´Â »ç¿ø ¼ö¸¦ ±¸ÇÏ½Ã¿À.
+		// 3ë²ˆ. ì‚¬ì› ì¤‘ ê¸‰ì—¬ë¥¼ 300ì´í•˜ë¡œ ë°›ê³  ìˆëŠ” ì‚¬ì› ìˆ˜ë¥¼ êµ¬í•˜ì‹œì˜¤.
 		int count = 0;
 		for (int i=0; i<list.size(); i++) {
 			if (list.get(i).getSal() <= sal) {
 				++count;
 			}
 		}
-		System.out.println("±Ş¿©¸¦ "+sal+" ÀÌÇÏ·Î ¹Ş°í ÀÖ´Â »ç¿ø ¼ö : "+count+"¸í");
+		System.out.println("ê¸‰ì—¬ë¥¼ "+sal+" ì´í•˜ë¡œ ë°›ê³  ìˆëŠ” ì‚¬ì› ìˆ˜ : "+count+"ëª…");
 		return count;
 	}
 
 	@Override
 	public EmpVO setDept(EmpVO empVO) {
-		// 4¹ø. Æ¯Á¤ »ç¿ø¿¡ ºÎ¼­¹øÈ£ 10, ºÎ¼­ÀÌ¸§ SALES ºÎ¼­¸¦ Ãß°¡ÇÏ°í »ç¿øÀ» ¸®ÅÏÇÏ½Ã¿À.
-		empVO.setList(null);
-		return null;
+		// 4ë²ˆ. íŠ¹ì • ì‚¬ì›ì— ë¶€ì„œë²ˆí˜¸ 10, ë¶€ì„œì´ë¦„ SALES ë¶€ì„œë¥¼ ì¶”ê°€í•˜ê³  ì‚¬ì›ì„ ë¦¬í„´í•˜ì‹œì˜¤.
+		List<DeptVO> deptList = new ArrayList<DeptVO>();
+		DeptVO dept = new DeptVO(10, "SALES");
+		deptList.add(dept);
+		empVO.setList(deptList);
+		
+		for (DeptVO dept1 : deptList) {
+			System.out.println("ë¶€ì„œë²ˆí˜¸ : "+dept1.getDeptno()+", ë¶€ì„œì´ë¦„ : "+dept1.getDname());
+		}
+		return empVO;
 	}
 
 }
