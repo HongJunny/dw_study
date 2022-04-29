@@ -79,3 +79,25 @@ i를 j로 표현 하면
 
 	
 참조 https://github.com/YYJ0311/DW_memo/blob/master/%EC%88%99%EC%A0%9C/0425/algorithm/%ED%92%80%EC%9D%B4.java
+
+
+---   
+	
+		//선생님의 풀어주신것
+		//삽입정렬을 이용하여 오름차순 정렬!
+		int array[] = {8, 5, 6, 2, 4};
+		
+		for (int i=0; i<(array.length-1); i++) {   // 4회전 세팅
+			System.out.println((i+1)+"회전");
+			// 배열을 비교 하는 로직 구현
+			for (int j=i+1; j>0; j--) {
+				int key = j;
+				System.out.println("key : "+key);
+				if (array[key] < array[key-1]) {
+					int temp = array[key];
+					array[key] = array[key-1];
+					array[key-1] = temp;
+				}
+			}
+			System.out.println("-----");
+		}
