@@ -1,0 +1,43 @@
+
+
+* 어플리케이션 계층
+   client -> controller -> service -> mapper
+        client & controller = 프리젠테이션 계층
+        service = 비즈니스 계층
+        mapper = 퍼시스턴스 계층
+
+
+* 통신은 대부분 VO(DTO)로 한다
+
+
+---------------------------------------------------------------------------------------
+
+
+* ORM - JPA, MyBatis
+
+
+---------------------------------------------------------------------------------------
+
+
+* 메소드 이름을 적는 규칙
+   Controller - call, load를 사용
+        ***방법 1 : callEmpInfo()
+        방법 2 : loadEmpInfo()
+   Service
+        방법 1 : get, set를 사용, 동사로 표현 (make, upload, download 등등)
+   Mapper
+        방법 1 : find(select), save(insert, update), delete 
+        방법 2 : get, set
+        ***방법 3 : select, update, insert, delete
+
+
+---------------------------------------------------------------------------------------
+
+
+* 파라미터에 값을 받는 방법
+
+  - Controller : URL 요청
+      1. Controller에서 파라미터를 받는 방법
+           1) RESTful - 주소(URL)를 의미 있게 네이밍 하는 방법
+           2) Query String (인터넷 싸이트에 적힌 "?", "&")
+
