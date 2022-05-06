@@ -1,0 +1,6 @@
+* postman : 보기 좋게 정리 된 작업 결과를 확인 할 수 있음
+
+postman 검색 -> 처음 싸이트 클릭 -> Build APIs together 에서 윈도우 모양 클릭 -> Windows 64-bit 클릭
+
+다운받은것 실행 -> Create Free Account 클릭 -> 구글 아이디로 로그인
+
