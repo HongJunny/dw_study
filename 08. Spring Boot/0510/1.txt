@@ -1,0 +1,55 @@
+
+
+* CRUD
+  C : Create ( Insert & Post ) - 자원 조회
+  R : Read ( Select & Get ) - 자원 추가
+  U : Update - 자원 삭제
+  D : Delete - 자원 수정
+
+
+---------------------------------------------------------------------------------------
+
+
+* Controller - URL을 요청 받는 방법
+  1. Restful
+         ex)  /emp/empno/7000
+              /emp/job/{job}/sal/{sal}
+      @PathVariable : { } 값을 파라미터에 대입
+           1) 주소 이름은 명사로 작성 ( 동사 x )
+                  ex)  /members/insert       (x)
+                       /members/no/123      (o)
+           2) 주소 이름은 소문자로 작성 ( 대문자 x )
+           3) 복수를 의미 할 때는 뒤에 s 붙이기
+                  ex)  /members      (o)
+                       /member        (x)
+           4) 핸드폰을 소유 하고 있는 학생 조회 (리소스끼리 연관 관계가 있는 경우)
+                  ex)  /students/phone
+               1번중에 핸드폰을 소유 하고 있는 학생 조회
+                  ex)  /students/1/phone
+                       /리소스명/리소스아이디/관계가 있는 다른 리소스
+               130번 번호를 가진 고객 주문 리스트 조회
+                  ex)  /customeres/130/orderList      (o)
+                       /customeres/130/order/list      (o)
+                       /customeres/130/order-list      (o)
+               20번 번호를 가진 유저의 핸드폰 고유번호는 AA123
+                  ex)  /users/20/phone/AA123      (o)
+               사원번호가 7000인 사원의 사수번호는 3000
+                  ex)  emp/7000/mgr/3000                        (o)
+                       emp/empno/7000/mgr/mgrno/3000      (o)
+           5) 마지막 주소의 끝에는 '/'를 붙이지 않음
+                  ex)  www.naver.com/news/     (x)
+                       www.naver.com/news      (o)
+  2) QueryString = '?'
+      검색(필터링) 할 때 많이 사용 함
+         ex)  게시판 - 현재 페이지
+
+
+---------------------------------------------------------------------------------------
+
+
+* 깃허브
+  git config --global pull.rebase true
+     pull 먼저 받아야 하는데, 작업 먼저 하다가 pull 받으려고 하면 commit 먼저 하고 pull을 받을 수 있게 함
+     bash 창에서 입력해야 됨
+        내가 전에 작업한 컴퓨터가 아닌 다른 컴퓨터에서 작업 할 때, 같은 작업 화면이 나올 수 있게 함
+
