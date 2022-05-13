@@ -1,0 +1,21 @@
+
+
+* API
+  - Spring에서 웹으로 보내면 웹 서버가 됨
+        Spring에서 'JSON or JSP'로 보내줌
+            JSON은 @RestController
+            JSP는 @Controller
+  - Spring에서 안드로이드로 보내면 안드로이드 서버가 됨
+        Spring에서 JSON으로 보내줌
+  - Spring에서 기계( ex. 드론 )로 보내면 기계 서버가 됨
+        Spring에서 JSON으로 보내줌
+
+
+---------------------------------------------------------------------------------------
+
+
+※ spring으로 구현한 API를 html에서 결과 확인
+
+* AJAX ( ***비동기 통신 ) = 컨트롤러에 요청을 보내서 json으로 결과를 받아옴
+
+
