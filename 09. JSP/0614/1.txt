@@ -1,0 +1,58 @@
+
+
+* 'redirect' & 'forward'
+  - 공통점 : 요청을 받은것에서 처리
+  - 차이점
+      redirect : 떠넘기는것 (우리 파트가 아니니까 다른 파트로 가서 다시 문의)
+      forward : 자신이 처리 (자신 파트가 아니라도 문의를 받은것이니까 끝까지 알아봐서 처리)
+
+
+-----------------------------------------------------------------------------------------
+
+
+* EC2 = 탄력 있는 컴퓨터
+  - 장점
+       1) Auto Scale
+       2) 상황에 맞는 컴퓨터 구입
+       3) 시간 절약
+  - 순서
+       1) 인스턴스
+       2) 인스턴스 시작
+            a) 이름은 free함
+            b) 운영체제 선택 : Ubuntu (운영체제중에서 제일 저렴함)
+            c) 인스턴스 유형 : 프리 티어 사용 가능
+            d) 키 페어(로그인) : 키 페어 생성 (키 이름은 free 함) - "잃어버리면 안됨"
+            e) 네트워크 설정 : 기존 보안 그룹 선택 - 디폴트 선택
+            f) 스토리지 구성 : 노터치
+       3) 인스턴스 시작
+       4) 모든 인스턴스 보기
+       5) 인스턴스 눌렀을 때 인스턴스 상태가 "실행중"이라고 뜨면 정상
+            a) 퍼블릭 IP라고 적힌곳의 IP는 매번 IP가 바뀜
+               IP를 고정 시키려면, 왼쪽 메뉴의 '탄력적 IP'에서 설정 (유료)
+
+
+-----------------------------------------------------------------------------------------
+
+
+* Xmanager
+  클라우드 컴퓨터와 연결 할 수 있는 프로그램(원격 프로그램)
+
+
+* UBUNTU
+  UBUNTU는 apt라는 명령어를 이용 해서 프로그램 다운 받음
+  Xmanager Enterprise 4에서 Xshell 실행 후에 새로 만들고
+     1) 자바 JDK 설치
+           sudo apt update
+           sudo apt install openjdk-11-jdk   (중간에 y 누르기)
+           javac -version   (자바 버전 확인)
+     2) UBUNTU ROOT 계정 만들기
+           sudo passwd root   (ROOT 비번 초기설정)
+           su -   (ROOT 로그인)
+           logout   (ROOT 로그아웃)
+     3) 톰캣 설치
+           wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz
+           tar xf apache-tomcat-9.0.64.tar.gz
+           mv apache-tomcat-9.0.64 tomcat   (폴더명 수정)
+           sh startup.sh   (톰캣 실행)
+           netstat -tnlp   (포트 확인)
+

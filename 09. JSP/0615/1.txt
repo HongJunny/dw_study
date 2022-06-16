@@ -1,0 +1,6 @@
+
+
+* MySQL 설치 순서
+   1) MySQL installer 설치 (내 PC에 DB 설치) - 진짜 DB를 설치
+   2) dbeaver 설치
+   3) dbeaver에서 MySQL을 연동 할 수 있게 MySQL 설치 (드라이버 설치)
